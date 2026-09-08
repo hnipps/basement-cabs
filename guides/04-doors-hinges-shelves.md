@@ -11,14 +11,14 @@ Trim the rough-cut MDF doors to final size now, tape on the line.
 | Door | Final size | Qty |
 |---|---|---|
 | Tall door | 82-11/16 x 18-1/8 | 1 |
-| TV doors 1 to 6 | 30-1/32 x 14-3/8 | 6 |
+| TV doors 1 to 6 | 29-63/64 x 14-3/8 | 6 |
 
 TV doors: bottom edge flush with the front stringer underside (4-15/16 off the
 floor), top edge 1/8 under the slab. Reveal 1/8 between doors, 1/4 at the tall
 cabinet and at the right wall. The tall door is flush with the exposed right side and
 1/4 off the left wall.
 
-If the installed TV run is not 181-5/16 wide, recut the six doors to (actual width
+If the installed TV run is not 181 wide, recut the six doors to (actual width
 minus 2 x 1/4 minus 5 x 1/8) divided by 6, and move the dividers to match (guide 3
 step 8: each divider's left face is door width + 1/8 + 9 mm - 1/2 to the right of the
 previous door's left edge).

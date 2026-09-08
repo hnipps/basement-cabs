@@ -66,8 +66,8 @@ elsewhere the sleepers get shims.
 1. **Lines.** Level line E on the rear wall from the tall cabinet to the right wall
    (laser, or a 4' level walked along a straight board). Mark line A and line B off it
    with a tape, not the floor.
-2. **Rails to studs.** Three 2x4 rails 60-7/16 end to end, top edge on line E, butt
-   joints at 60-7/16 and 120-7/8 from the tall cabinet (78-13/16 and 139-1/4 from
+2. **Rails to studs.** Three 2x4 rails 60-21/64 end to end, top edge on line E, butt
+   joints at 60-21/64 and 120-43/64 from the tall cabinet (78-45/64 and 139-3/64 from
    the left wall); both joints hide inside dividers 2 and 4. Pilot and drive one #10
    x 4" into every stud, alternating high and low on the rail. Stack to the stud is
    rail 1-1/2 + drywall 1/2 = 2", so 2" of screw is in the stud. Stretch a string
@@ -75,11 +75,11 @@ elsewhere the sleepers get shims.
    1/16; a bowed wall pushes the whole run out, and nothing else squares it. Sight
    down the rail line before the last screws.
 3. **Rear sleepers.** 2x2 blocks stood on end under line A, one under each cross
-   block position (left end, the five divider centres at 30-1/2, 60-11/16, 90-13/16,
-   120-31/32, 151-1/8 from the tall cabinet, and the right end), tight to the wall.
+   block position (left end, the five divider centres at 30-29/64, 60-9/16, 90-43/64,
+   120-49/64, 150-7/8 from the tall cabinet, and the right end), tight to the wall.
    Cut them 4-3/4 and shim to line A.
-4. **Bottom rear stringer.** Three pieces 60-21/32, 60-5/16, 60-21/64 end to end on
-   the sleepers, top on line B, joints at 60-11/16 and 120-31/32 from the tall
+4. **Bottom rear stringer.** Three pieces 60-9/16, 60-13/64, 60-15/64 end to end on
+   the sleepers, top on line B, joints at 60-9/16 and 120-49/64 from the tall
    cabinet (under dividers 2 and 4). Screw it to the studs with #10 x 4" and down
    into each sleeper with a #8 x 2-1/2. Level it end to end; this is the datum for
    the whole bottom.
@@ -96,14 +96,14 @@ elsewhere the sleepers get shims.
 7. **Bottoms.** Three 1/2 spruce panels 15-3/8 deep, rear edge to the wall (scribe if
    the wall wanders), joints centred over cross blocks 2 and 4 (under dividers 2 and
    4). #8 x 1-1/4 every 12" into the stringers, and two into each block.
-8. **Dividers.** Left faces at 30-17/64, 60-27/64, 90-37/64, 120-47/64, 150-57/64
+8. **Dividers.** Left faces at 30-13/64, 60-5/16, 90-27/64, 120-33/64, 150-5/8
    from the tall cabinet's right side (CUTLIST.md gives X from the left wall). Set
    each one on the bottom, notch over the rail, front edge flush with the front
    stringer face, plumb both ways. Two #8 x 1-1/4 through the divider into the rail
    face inside the notch, then 1" pocket screws down into the bottom (jig at 1/2).
    Dividers 2 and 4 each cover a rail joint; screw into both rail ends.
 9. **Top-front stringers.** Cut each of the six to fit its bay: measure between
-   dividers at the top front (nominal 30-17/64, four at 29-21/32, 29-59/64). Top on
+   dividers at the top front (nominal 30-13/64, four at 29-39/64, 29-7/8). Top on
    line E, front face flush with the divider fronts. 1" pocket screws from the
    divider face into the stringer ends. Bay 1's left end: screw a 2x2 offcut block to
    the tall cabinet's right side with #8 x 1-1/4 (pilot; 1/2 bite in 5/8 MDF) and

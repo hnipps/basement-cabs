@@ -29,12 +29,12 @@ One frameless box and one ladder. The tall cabinet (18-3/8 W x 82-11/16 H x 24-7
 is a 5/8 spruce plywood box (left side, top, bottom, 3 shelves) with a 5/8 MDF exposed
 right side, a 1/8 hardboard back nailed over the rear edges, two 2x4 hanging rails,
 and one 5/8 MDF door 82-11/16 x 18-1/8 on 5 hinges, hinged at the wall. The TV run
-(181-5/16 W x 15 H x 16 D) has no boxes and no back: a 2x2 ladder on the wall, with
+(181 W x 15 H x 16 D) has no boxes and no back: a 2x2 ladder on the wall, with
 two full-length bottom stringers (front and rear, each in 3 pieces), 7 cross blocks,
 three 2x4 rails end to end as the top-rear member screwed to the studs, and six short
 2x2 top-front stringers between the dividers. On that sit three 1/2 spruce bottoms,
 five 1/2 spruce dividers notched rear-top for the rail, a 1/2 MDF top slab in two
-pieces jointed over divider 3, and six 5/8 MDF doors 30-1/32 x 14-3/8, each hinged on
+pieces jointed over divider 3, and six 5/8 MDF doors 29-63/64 x 14-3/8, each hinged on
 the divider to its left and opening right. Both units stand 4-15/16 off the floor on
 2x2 sleeper blocks and shims behind 5/8 MDF kick plates; no adjustable legs. The slab
 top lands at 19-15/16, flush with the wall panelling. Everything is painted black.

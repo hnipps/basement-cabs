@@ -6,9 +6,9 @@ the six top-front stringers, all on line E (19-7/16), and brings the run to 15 h
 
 ## Fit
 
-1. Left piece 90-53/64 is cut to length already: tall cabinet's right side to the
-   centre of divider 3 (90-13/16 from the tall cabinet). Right piece: measure from
-   the centre of divider 3 to the right wall at the top (nominal 90-31/64) and cut
+1. Left piece 90-43/64 is cut to length already: tall cabinet's right side to the
+   centre of divider 3 (90-43/64 from the tall cabinet). Right piece: measure from
+   the centre of divider 3 to the right wall at the top (nominal 90-21/64) and cut
    the piece 1/2 long for the scribe. Cut the joint ends of both pieces square and
    clean on the same saw setting, tape on the line.
 2. Dry fit. The joint lands over the middle of divider 3, so it is supported along

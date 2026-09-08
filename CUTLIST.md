@@ -3,8 +3,8 @@
 Dimensions in inches, length x width. Thickness per material. Rip and cross-cut to
 these sizes; the model is the source of truth (`fusion/builtin_cabinet.py`, 48 bodies).
 
-Parameters at time of export: wall 199-11/16, tall cabinet 18-3/8 W x 82-11/16 H x
-24-7/16 D, TV run 181-5/16 W x 15 H x 16 D, 4-15/16 kick under both. Construction per
+Parameters at time of export: wall 199-3/8, tall cabinet 18-3/8 W x 82-11/16 H x
+24-7/16 D, TV run 181 W x 15 H x 16 D, 4-15/16 kick under both. Construction per
 `guides/08-cost-reduction-options.md` "Opt 2-lite": tall cabinet is a 5/8 spruce box with
 an MDF exposed side; the TV run is a 2x2 ladder on the wall (no boxes, no back) with 1/2
 spruce bottoms and dividers, 1/2 MDF top and 5/8 MDF doors.
@@ -25,9 +25,9 @@ the length). 23-11/16 + kerf + 23-11/16 = 47-1/2, so it only works on a true 48"
 
 | qty | length   | width  | part |
 |----:|----------|--------|------|
-| 1 | 60-21/32 | 15-3/8 | TV bottom 1 (tall cabinet to divider 2 centre) |
-| 1 | 60-5/16  | 15-3/8 | TV bottom 2 (divider 2 centre to divider 4 centre) |
-| 1 | 60-21/64 | 15-3/8 | TV bottom 3 (divider 4 centre to right wall) |
+| 1 | 60-9/16  | 15-3/8 | TV bottom 1 (tall cabinet to divider 2 centre) |
+| 1 | 60-13/64 | 15-3/8 | TV bottom 2 (divider 2 centre to divider 4 centre) |
+| 1 | 60-15/64 | 15-3/8 | TV bottom 3 (divider 4 centre to right wall) |
 | 5 | 15-3/8   | 12-1/2 | TV dividers — notch rear top corner 3-1/2 up x 1-1/2 in for the rail (nest yields 6; the 6th is a spare) |
 
 Nest: three 15-3/8 strips (46-3/8 of the 48 width), each strip = one bottom + two dividers.
@@ -38,10 +38,10 @@ Nest: three 15-3/8 strips (46-3/8 of the 48 width), each strip = one bottom + tw
 |----:|----------|----------|------|
 | 1 | 82-11/16 | 23-11/16 | tall right side (exposed face) |
 | 1 | 82-11/16 | 18-1/8   | tall door, 5 hinges, hinged at the wall side |
-| 6 | 30-1/32  | 14-3/8   | TV doors, all hinged on the left, open to the right |
+| 6 | 29-63/64 | 14-3/8   | TV doors, all hinged on the left, open to the right |
 | 1 | 18-3/8   | 4-15/16  | kick, tall (flush) |
 | 1 | 10-15/16 | 4-15/16  | kick return |
-| 1 | 181-5/16 | 4-15/16  | kick, TV (recessed 2-1/2) — cut as 90-13/16 + 90-1/2, joint behind cross block 3 |
+| 1 | 181      | 4-15/16  | kick, TV (recessed 2-1/2) — cut as 90-11/16 + 90-5/16, joint behind cross block 3 |
 
 Nest A (fits 2 x 49x97): sheet 1 = tall right side + tall door + one 4-15/16 kick strip
 (47-1/8 of width); sheet 2 = six TV doors as two 14-3/8 strips of three, plus the other
@@ -53,10 +53,10 @@ but not on a 48" one. Both nests are 2 sheets.
 
 | qty | length   | width | part |
 |----:|----------|-------|------|
-| 1 | 90-53/64 | 16    | TV top slab, left piece (tall cabinet side to divider 3 centre) |
-| 1 | 90-31/64 | 16    | TV top slab, right piece (divider 3 centre to right wall) |
+| 1 | 90-43/64 | 16    | TV top slab, left piece (tall cabinet side to divider 3 centre) |
+| 1 | 90-21/64 | 16    | TV top slab, right piece (divider 3 centre to right wall) |
 
-The joint lands over the middle of divider 3, at 90-13/16 from the tall cabinet side.
+The joint lands over the middle of divider 3, at 90-43/64 from the tall cabinet side.
 Fill and paint. Leftover 16-1/2 x 97 strip.
 
 ## 1/8" hardboard (tall back) — 0.33 sheets net, buy 1
@@ -65,25 +65,25 @@ Fill and paint. Leftover 16-1/2 x 97 strip.
 |----:|----------|--------|------|
 | 1 | 82-11/16 | 18-3/8 | tall back, nailed over the rear edges |
 
-## 2x2 SPF (1-1/2" x 1-1/2" actual) — 628" of parts, 7 boards of 8', buy 8
+## 2x2 SPF (1-1/2" x 1-1/2" actual) — 627" of parts, 7 boards of 8', buy 8
 
 | qty | length   | part |
 |----:|----------|------|
-| 1 | 181-5/16 | bottom rear stringer — 3 pieces 60-21/32, 60-5/16, 60-21/64, joints under dividers 2 and 4 |
-| 1 | 181-5/16 | bottom front stringer — same 3 pieces, same joints |
+| 1 | 181      | bottom rear stringer — 3 pieces 60-9/16, 60-13/64, 60-15/64, joints under dividers 2 and 4 |
+| 1 | 181      | bottom front stringer — same 3 pieces, same joints |
 | 7 | 12-3/8   | cross blocks between the stringers: both ends and centred under each divider |
-| 1 | 30-17/64 | top front stringer, bay 1 (tall cabinet side to divider 1) |
-| 4 | 29-21/32 | top front stringers, bays 2 to 5 |
-| 1 | 29-59/64 | top front stringer, bay 6 (divider 5 to right wall) |
+| 1 | 30-13/64 | top front stringer, bay 1 (tall cabinet side to divider 1) |
+| 4 | 29-39/64 | top front stringers, bays 2 to 5 |
+| 1 | 29-7/8   | top front stringer, bay 6 (divider 5 to right wall) |
 
 Crosscut plan, 1/8 kerf, 96" boards:
 
 | board | cuts | leftover |
 |---|---|---|
-| #1 | stringer 60-21/32 + top front 30-17/64 | 4-13/16 |
-| #2 | stringer 60-21/32 + top front 29-59/64 | 5-1/8 |
-| #3, #4 | stringer 60-21/64 + top front 29-21/32 | 5-3/4 each |
-| #5, #6 | stringer 60-5/16 + top front 29-21/32 | 5-3/4 each |
+| #1 | stringer 60-9/16 + top front 30-13/64 | 4-63/64 |
+| #2 | stringer 60-9/16 + top front 29-7/8 | 5-5/16 |
+| #3, #4 | stringer 60-15/64 + top front 29-39/64 | 5-59/64 each |
+| #5, #6 | stringer 60-13/64 + top front 29-39/64 | 5-15/16 each |
 | #7 | seven cross blocks 12-3/8 | 8-1/2 |
 | #8 | kick sleepers (blocks behind the kicks, cut to suit) | — |
 
@@ -98,20 +98,20 @@ All five hanging rails come from 2x4 stock already on hand. A 2x4 arrives at exa
 
 | qty | length  | width | part |
 |----:|---------|-------|------|
-| 3 | 60-7/16 | 3-1/2 | TV hanging rails, end to end across the run (top rear member of the ladder) |
+| 3 | 60-21/64 | 3-1/2 | TV hanging rails, end to end across the run (top rear member of the ladder) |
 | 2 | 17-1/8  | 3-1/2 | tall hanging rails |
 
 Crosscut plan from the boards on hand:
 
 | board | cut | leftover |
 |---|---|---|
-| 8' (96") #1 | one TV rail 60-7/16 | 35-9/16 |
-| 8' (96") #2 | one TV rail 60-7/16 | 35-9/16 |
-| 6-1/2' (78") #1 | one TV rail 60-7/16 | 17-9/16 |
+| 8' (96") #1 | one TV rail 60-21/64 | 35-43/64 |
+| 8' (96") #2 | one TV rail 60-21/64 | 35-43/64 |
+| 6-1/2' (78") #1 | one TV rail 60-21/64 | 17-43/64 |
 | 47" | both tall rails 17-1/8 | 12-5/8 |
 | 6-1/2' (78") #2 | untouched | 78" |
 
-Uses 215-9/16 of the 395" available. The TV rail joints (at 78-13/16 and 139-1/4 from the
+Uses 215-1/4 of the 395" available. The TV rail joints (at 78-45/64 and 139-3/64 from the
 left wall) fall inside dividers 2 and 4, so each of those notches carries two rail ends.
 
 ## TV divider positions
@@ -119,18 +119,18 @@ left wall) fall inside dividers 2 and 4, so each of those notches carries two ra
 Measured along the rear wall from the left wall to the divider's LEFT face. Dividers are
 set from the doors, not at equal pitch: divider k sits so that door k+1 (hinged on it)
 covers 9 mm of its front edge and door k stops 1/8 short of door k+1. First divider is
-30-17/64 from the tall cabinet's right side, then every 30-5/32 (door 30-1/32 + reveal).
+30-13/64 from the tall cabinet's right side, then every 30-7/64 (door 29-63/64 + reveal).
 
 | divider | X from left wall | from tall cabinet side | mm from left wall |
 |---:|---|---|---:|
-| 1 | 48.636 (48-41/64) | 30.261 | 1235.3 |
-| 2 | 78.792 (78-51/64) | 60.417 | 2001.3 |
-| 3 | 108.948 (108-61/64) | 90.573 | 2767.3 |
-| 4 | 139.104 (139-7/64) | 120.729 | 3533.2 |
-| 5 | 169.261 (169-17/64) | 150.886 | 4299.2 |
+| 1 | 48.584 (48-37/64) | 30.209 | 1234.0 |
+| 2 | 78.688 (78-11/16) | 60.313 | 1998.7 |
+| 3 | 108.792 (108-51/64) | 90.417 | 2763.3 |
+| 4 | 138.896 (138-57/64) | 120.521 | 3528.0 |
+| 5 | 169.000 (169) | 150.625 | 4292.6 |
 
-Clear bay widths: bay 1 30-17/64, bays 2 to 5 29-21/32, bay 6 29-59/64. Door left edges
-from the left wall: 18-5/8, 48-25/32, 78-15/16, 109-3/32, 139-1/4, 169-13/32.
+Clear bay widths: bay 1 30-13/64, bays 2 to 5 29-39/64, bay 6 29-7/8. Door left edges
+from the left wall: 18-5/8, 48-47/64, 78-53/64, 108-15/16, 139-3/64, 169-9/64.
 
 ## Notes
 

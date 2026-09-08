@@ -57,7 +57,7 @@ panel in place, scribe the wall onto it, plane to the line. If the wall leans ba
 the top, the slab's rear edge wants to be 16 + the lean; the 1/2 slab is cut 16 deep
 and covers up to a 1/4 lean, so check that before cutting the slab.
 
-**Right wall.** Bay 6 should finish 29-59/64 clear (divider 5 right face to the wall).
+**Right wall.** Bay 6 should finish 29-7/8 clear (divider 5 right face to the wall).
 If the wall measurement in guide 2 was right it will. If bay 6 is short, move
 divider 5 left by the difference and recut door 6 and the bay 6 stringer; the 1/4
 end gap absorbs up to 1/8 either way without moving anything.
@@ -66,7 +66,7 @@ end gap absorbs up to 1/8 either way without moving anything.
 
 5/8 MDF, 4-15/16 tall, screwed to the sleepers with #8 x 1-1/4, two per sleeper,
 heads countersunk and filled. Tall kick 18-3/8, flush with the door face, over the
-front pair of tall sleepers. TV kick in two pieces, 90-13/16 and 90-1/2, joint behind
+front pair of tall sleepers. TV kick in two pieces, 90-11/16 and 90-5/16, joint behind
 cross block 3's sleeper, front face 2-1/2 behind the door plane. The 10-15/16 return
 joins the two planes at the tall cabinet's right side, screwed to a 2x2 block behind
 it. Kicks come off for cleaning under the unit.

@@ -9,7 +9,7 @@ six top-front stringers are cut on site (guide 3), not here.
 ## Before the first cut: measure the wall again
 
 Measure the rear wall width at 5" and at 20" above the floor, and at the front edge
-of where the cabinets will be (16" out). If any reading is below 199-11/16, open the
+of where the cabinets will be (16" out). If any reading is below 199-5/8, open the
 Fusion model, set `wall_w` to the smallest reading minus 1/4, and regenerate the cut
 list. The doors and slab hide a small gap at the right wall; a bottom or stringer that
 is too long cannot be hidden. The tall cabinet width (18-3/8) and depth (24-7/16) are
@@ -59,9 +59,9 @@ position where it matters least.
 
 | strip | bottom | dividers |
 |---|---|---|
-| 1 | 60-21/32 (bottom 1, tall cabinet to divider 2 centre) | 2 x 12-1/2 |
-| 2 | 60-5/16 (bottom 2, divider 2 centre to divider 4 centre) | 2 x 12-1/2 |
-| 3 | 60-21/64 (bottom 3, divider 4 centre to right wall) | 2 x 12-1/2 |
+| 1 | 60-9/16 (bottom 1, tall cabinet to divider 2 centre) | 2 x 12-1/2 |
+| 2 | 60-13/64 (bottom 2, divider 2 centre to divider 4 centre) | 2 x 12-1/2 |
+| 3 | 60-15/64 (bottom 3, divider 4 centre to right wall) | 2 x 12-1/2 |
 
 Dividers are 15-3/8 x 12-1/2; six come off the sheet, five are used and one is a
 spare. Notch each divider's rear top corner 3-1/2 up x 1-1/2 in for the rail: hand
@@ -75,23 +75,22 @@ Nest A works on any 49 x 97 sheet:
 **Sheet 1.** Rip 23-11/16 (tall right side, the exposed face: mark it and keep it
 scratch-free), then 18-1/8 (tall door), then one 4-15/16 kick strip. 47-1/8 of the 49
 width. Cross-cut the side and door to 82-11/16 plus 1/2 for the door. Cut the kick
-strip to 90-13/16 (TV kick, left piece).
+strip to 90-11/16 (TV kick, left piece).
 
 **Sheet 2.** Rip two 14-3/8 strips the full length; three TV doors from each at
-30-1/32 plus 1/2 each way (3 x 30-17/32 = 91-19/32 fits in 97). From the remaining
-20" width rip two 4-15/16 strips: TV kick right piece 90-1/2, tall kick 18-3/8, kick
+29-63/64 plus 1/2 each way (3 x 30-31/64 = 91-29/64 fits in 97). From the remaining
+20" width rip two 4-15/16 strips: TV kick right piece 90-5/16, tall kick 18-3/8, kick
 return 10-15/16.
 
-The TV kick totals 181-5/16. `CUTLIST.md` splits it 97 + 84-5/16; use 90-13/16 +
-90-1/2 instead so the joint lands behind cross block 3 (block centres are at
-30-1/2, 60-11/16, 90-13/16, 120-31/32 and 151-1/8 from the tall cabinet), where a
-sleeper can back it. Nest B (all seven doors on one sheet: 18-1/8 + 14-3/8 + 14-3/8 +
+The TV kick totals 181, cut as 90-11/16 + 90-5/16 so the joint lands behind cross
+block 3 (block centres are at 30-29/64, 60-9/16, 90-43/64, 120-49/64 and 150-7/8 from
+the tall cabinet), where a sleeper can back it. Nest B (all seven doors on one sheet: 18-1/8 + 14-3/8 + 14-3/8 +
 2 kerfs = 47-1/8) also works on a true 49" sheet but not on 48".
 
 ### 1/2" MDF (1 sheet, TV top slab)
 
 After the 3" fence strip: rip two 16" strips the full 97 length. Slab left piece
-90-53/64 (tall cabinet side to divider 3 centre), right piece 90-31/64 (divider 3
+90-43/64 (tall cabinet side to divider 3 centre), right piece 90-21/64 (divider 3
 centre to right wall). Cut the left piece to length now, leave the right one 1/2 long
 for fitting in guide 7. Leftover 13-3/4 x 97 strip: keep it for paint test panels and
 the hinge-plate template.
@@ -107,15 +106,15 @@ each board and put the straightest into the stringers.
 
 | board | cuts | leftover |
 |---|---|---|
-| #1 | stringer 60-21/32 + top front 30-17/64 | 4-13/16 |
-| #2 | stringer 60-21/32 + top front 29-59/64 | 5-1/8 |
-| #3, #4 | stringer 60-21/64 + top front 29-21/32 | 5-3/4 each |
-| #5, #6 | stringer 60-5/16 + top front 29-21/32 | 5-3/4 each |
+| #1 | stringer 60-9/16 + top front 30-13/64 | 4-63/64 |
+| #2 | stringer 60-9/16 + top front 29-7/8 | 5-5/16 |
+| #3, #4 | stringer 60-15/64 + top front 29-39/64 | 5-59/64 each |
+| #5, #6 | stringer 60-13/64 + top front 29-39/64 | 5-15/16 each |
 | #7 | seven cross blocks 12-3/8 | 8-1/2 |
 | #8 (on hand) | kick sleepers, cut to suit (guide 6) | — |
 
-Cut the stringer pieces now: rear and front bottom stringers are each 60-21/32 +
-60-5/16 + 60-21/64 = 181-5/16, joints under dividers 2 and 4. Cut the top-front
+Cut the stringer pieces now: rear and front bottom stringers are each 60-9/16 +
+60-13/64 + 60-15/64 = 181, joints under dividers 2 and 4. Cut the top-front
 stringer stock to the lengths in the table only if you trust the wall; otherwise
 leave those six pieces at 31" and cut them to fit between the dividers on site.
 Leftovers are under 6" on six boards, so there is no slack; the leftovers are sleeper
@@ -127,9 +126,9 @@ Five crosscuts on the miter saw, no rips.
 
 | board | cut | leftover |
 |---|---|---|
-| 8' #1 | TV rail 60-7/16 | 35-9/16 |
-| 8' #2 | TV rail 60-7/16 | 35-9/16 |
-| 6-1/2' #1 | TV rail 60-7/16 | 17-9/16 |
+| 8' #1 | TV rail 60-21/64 | 35-43/64 |
+| 8' #2 | TV rail 60-21/64 | 35-43/64 |
+| 6-1/2' #1 | TV rail 60-21/64 | 17-43/64 |
 | 47" | both tall rails 17-1/8 | 12-5/8 |
 | 6-1/2' #2 | untouched | 78" |
 
