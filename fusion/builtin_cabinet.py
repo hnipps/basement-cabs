@@ -1,9 +1,24 @@
-# Built-in wall cabinet: tall cabinet (left) + TV cabinet (right).
+# Built-in wall cabinet: tall cabinet (left) + TV run (right), "Option 2-lite" construction.
 # Run inside Fusion (via MCP execute). Fully parametric via user parameters;
 # every panel position and size is a sketch dimension / offset expression.
 # World frame: X along rear wall from left wall, rear wall at Y=0 with the room at -Y
 # (so Fusion's front view shows the door side, tall cabinet on the left), Z up. Inches.
 # Layout expressions below use y measured from the rear wall into the room; panel() mirrors.
+#
+# Construction (see guides/08-cost-reduction-options.md, "Opt 2-lite"):
+#   Tall cabinet: frameless 5/8 spruce ply box (left side, top, bottom, 3 shelves), right
+#     exposed side 5/8 MDF, 1/8 hardboard back nailed over the rear edges, two 2x4 rails,
+#     one 5/8 MDF door hinged at the wall side.
+#   TV run: no boxes and no back panel (the wall is the back). A 2x2 ladder: bottom-front and
+#     bottom-rear stringers full length, 2x2 cross blocks under every divider and at both
+#     ends, the three 2x4 rails end to end as the top-rear member, and six short 2x2
+#     top-front stringers between dividers. Three 1/2 spruce bottoms on the stringers,
+#     six 1/2 spruce dividers notched rear-top for the rail, 1/2 MDF top slab in two pieces
+#     with the joint over a divider, six 5/8 MDF doors. Every TV door hinges on the divider
+#     to its left (door 1 on the tall cabinet side) and opens to the right: door 1 full
+#     overlay, doors 2-6 half overlay covering 9 mm of the divider. Divider positions are
+#     therefore derived from the doors, not an equal pitch.
+#   Kicks: 5/8 MDF on 2x2 sleeper blocks (sleepers not modelled). No adjustable legs.
 import adsk.core, adsk.fusion, traceback
 
 def run(context):
@@ -22,31 +37,39 @@ def run(context):
         ("tall_w", "18.375", "in", "tall cabinet outside width (measured)"),
         ("tall_h", "82.6875", "in", "tall cabinet outside height"),
         ("tall_depth", "24.4375", "in", "tall cabinet depth incl. door face (measured)"),
-        ("tv_h", "15", "in", "TV cabinet outside height incl. top slab"),
-        ("tv_depth", "16", "in", "TV cabinet depth incl. door face (confirmed)"),
-        ("panel_h", "19.9375", "in", "wall panelling bottom edge above floor = TV cabinet top"),
-        ("ply", "0.75", "in", "carcass / shelf / door stock thickness"),
-        ("top_t", "0.75", "in", "TV top slab thickness (0.75 painted MDF, 1.5 for a wood top with nosing)"),
-        ("top_overhang", "0", "in", "TV top slab overhang past the door faces (0 flush; 0.75 typical for wood)"),
-        ("back_t", "0.25", "in", "back panel thickness"),
-        ("reveal", "0.125", "in", "gap between neighbouring overlay doors, and door to top slab"),
+        ("tv_h", "15", "in", "TV run outside height incl. top slab"),
+        ("tv_depth", "16", "in", "TV run depth incl. door face (confirmed)"),
+        ("panel_h", "19.9375", "in", "wall panelling bottom edge above floor = TV top"),
+        ("box_t", "0.625", "in", "tall carcass stock (5/8 spruce ply; right side 5/8 MDF)"),
+        ("tv_panel_t", "0.5", "in", "TV bottoms and dividers (1/2 spruce ply)"),
+        ("door_t", "0.625", "in", "door stock (5/8 MDF)"),
+        ("slab_t", "0.5", "in", "TV top slab (1/2 MDF)"),
+        ("top_overhang", "0", "in", "TV top slab overhang past the door faces"),
+        ("back_t", "0.125", "in", "tall cabinet back (1/8 hardboard); TV run has no back"),
+        ("stringer", "1.5", "in", "2x2 ladder stock, actual 1-1/2 square"),
+        ("reveal", "0.125", "in", "gap between neighbouring doors, and door to top slab"),
         ("end_gap", "0.25", "in", "door edge clearance to a wall or to the tall cabinet side"),
-        ("rail_h", "3.5", "in", "hanging rail width, top rear inside box (2x4 stock is 3-1/2 wide)"),
-        ("rail_t", "1.5", "in", "hanging rail thickness (1-1/2 solid 2x4 on hand; was 0.75 ply)"),
-        ("kick_setback", "2.5", "in", "TV cabinet kick plate recess behind door faces"),
-        ("tall_kick_setback", "0", "in", "tall cabinet kick plate recess (0 = flush with doors)"),
-        ("tall_shelves", "4", "", "shelf count in tall cabinet (rebuild script to change)"),
-        ("tall_doors", "1", "", "door count on tall cabinet (rebuild script to change)"),
-        ("tv_boxes", "3", "", "TV cabinet box count, 2 bays per box (rebuild script to change)"),
-        ("gap", "panel_h - tv_h", "in", "floor to cabinet underside (kick or float)"),
-        ("tv_w", "wall_w - tall_w", "in", "TV cabinet outside width"),
-        ("box_w", "tv_w / tv_boxes", "in", "TV cabinet box outside width"),
-        ("box_h", "tv_h - top_t", "in", "TV cabinet box height under the top slab"),
-        ("bay_w", "(box_w - 3 * ply) / 2", "in", "TV cabinet clear bay width (2 bays per box)"),
-        ("tv_door_w", "(tv_w - 2 * end_gap - (2 * tv_boxes - 1) * reveal) / (2 * tv_boxes)", "in", "TV overlay door width"),
-        ("tv_door_h", "box_h - reveal", "in", "TV overlay door height (flush with box bottom, reveal under top slab)"),
-        ("tall_door_w", "(tall_w - end_gap - (tall_doors - 1) * reveal) / tall_doors", "in", "tall overlay door width"),
+        ("overlay_half", "0.354331", "in", "half-overlay hinge: door covers 9 mm of the divider edge"),
+        ("rail_h", "3.5", "in", "hanging rail width (2x4 stock is 3-1/2 wide)"),
+        ("rail_t", "1.5", "in", "hanging rail thickness (1-1/2 solid 2x4 on hand)"),
+        ("kick_setback", "2.5", "in", "TV kick plate recess behind door faces"),
+        ("tall_kick_setback", "0", "in", "tall cabinet kick plate recess (0 = flush with door)"),
+        ("tall_shelves", "3", "", "shelf count in tall cabinet (rebuild script to change)"),
+        ("tv_doors", "6", "", "TV door / bay count (rebuild script to change)"),
+        ("gap", "panel_h - tv_h", "in", "floor to cabinet underside (kick height)"),
+        ("tv_w", "wall_w - tall_w", "in", "TV run outside width"),
+        ("tv_cd", "tv_depth - door_t", "in", "TV run carcass depth: wall to back of doors"),
+        ("tv_door_w", "(tv_w - 2 * end_gap - (tv_doors - 1) * reveal) / tv_doors", "in", "TV door width"),
+        ("tv_door_h", "tv_h - slab_t - reveal", "in", "TV door height (flush with front stringer underside, reveal under slab)"),
+        ("div_h", "tv_h - slab_t - tv_panel_t - stringer", "in", "TV divider height (sits on the bottom panel, under the slab)"),
+        ("tall_door_w", "tall_w - end_gap", "in", "tall door width (end_gap at the wall, flush at the exposed side)"),
+        ("rail_len", "tv_w / 3", "in", "TV rail length, three rails end to end"),
     ]
+    # divider k (1..5) left face: door k+1 hinges on it and covers overlay_half of its edge,
+    # so the divider's right face = door(k+1) left edge + overlay_half.
+    for k in range(1, 6):
+        PARAMS.append(("div%d_x" % k, "tall_w + end_gap + %d * (tv_door_w + reveal) + overlay_half - tv_panel_t" % k,
+                       "in", "TV divider %d left face X (derived from door %d hinge overlay)" % (k, k + 1)))
 
     ups = design.userParameters
     for name, expr, unit, comment in PARAMS:
@@ -158,8 +181,8 @@ def run(context):
         got = [bb.minPoint.x / IN, bb.minPoint.y / IN, bb.minPoint.z / IN, bb.maxPoint.x / IN, bb.maxPoint.y / IN, bb.maxPoint.z / IN]
         exp = lo_v + hi_v
         err = max(abs(g - e) for g, e in zip(got, exp))
-        out.append("%-22s %s %s size %.3f x %.3f x %.3f%s" % (
-            name, "OK " if err < 1e-3 else "BAD", "",
+        out.append("%-26s %s size %.3f x %.3f x %.3f%s" % (
+            name, "OK " if err < 1e-3 else "BAD",
             hi_v[0] - lo_v[0], hi_v[1] - lo_v[1], hi_v[2] - lo_v[2],
             "" if err < 1e-3 else "  got %s exp %s" % (got, exp)))
         return body
@@ -179,96 +202,109 @@ def run(context):
     def new_comp(name):
         return Grp(name)
 
-    def notch(target, tool, name):
-        """Cut `tool` out of `target`, keeping the tool body."""
+    def notch(target, tool_bodies, name):
+        """Cut the `tool_bodies` out of `target`, keeping the tools."""
         tools = adsk.core.ObjectCollection.create()
-        tools.add(tool)
+        for t in tool_bodies:
+            tools.add(t)
         cin = root.features.combineFeatures.createInput(target, tools)
         cin.operation = adsk.fusion.FeatureOperations.CutFeatureOperation
         cin.isKeepToolBodies = True
         cin.isNewComponent = False
         f = root.features.combineFeatures.add(cin)
         f.name = name
-        out.append("%-22s NOTCH cut by %s" % (name, tool.name))
+        out.append("%-26s NOTCH cut by %s" % (name, ", ".join(t.name for t in tool_bodies)))
 
-    # Construction: frameless 3/4" plywood boxes, full-overlay slab doors (MDF) so no
-    # carcass edge shows from the front. Back panel (1/4") nailed over the rear edges, so
-    # carcass panels start at y = back_t. Carcass front face sits one door thickness
-    # behind the cabinet depth. Hanging rail (rail_t x rail_h solid lumber) inside each
-    # box, top rear. Rails are 2x4, not plywood: see CUTLIST.md for the crosscut plan.
-    # TV boxes carry one continuous MDF top slab. Materials: 3/4 plywood carcass; 3/4 MDF for
-    # doors, top slab and the tall cabinet RIGHT side (the only exposed carcass face); 1/4 ply backs. Kick plate recessed, on adjustable legs.
-    # ---------------- Tall cabinet ----------------
+    def xrange_of(body):
+        bb = body.boundingBox
+        return bb.minPoint.x / IN, bb.maxPoint.x / IN
+
+    # ---------------- Tall cabinet: frameless 5/8 box ----------------
     tc = new_comp("TallCabinet")
-    cd = "tall_depth - back_t - ply"   # carcass panel depth
-    panel(tc, "LeftSide", "x", {"x": "0", "y": "back_t", "z": "gap"}, {"x": "ply", "y": cd, "z": "tall_h"})
-    panel(tc, "RightSide", "x", {"x": "tall_w - ply", "y": "back_t", "z": "gap"}, {"x": "ply", "y": cd, "z": "tall_h"})
-    panel(tc, "Bottom", "z", {"x": "ply", "y": "back_t", "z": "gap"}, {"x": "tall_w - 2*ply", "y": cd, "z": "ply"})
-    panel(tc, "Top", "z", {"x": "ply", "y": "back_t", "z": "gap + tall_h - ply"}, {"x": "tall_w - 2*ply", "y": cd, "z": "ply"})
+    cd = "tall_depth - back_t - door_t"   # carcass panel depth
+    panel(tc, "LeftSide", "x", {"x": "0", "y": "back_t", "z": "gap"}, {"x": "box_t", "y": cd, "z": "tall_h"})
+    panel(tc, "RightSideMDF", "x", {"x": "tall_w - box_t", "y": "back_t", "z": "gap"}, {"x": "box_t", "y": cd, "z": "tall_h"})
+    panel(tc, "Bottom", "z", {"x": "box_t", "y": "back_t", "z": "gap"}, {"x": "tall_w - 2*box_t", "y": cd, "z": "box_t"})
+    panel(tc, "Top", "z", {"x": "box_t", "y": "back_t", "z": "gap + tall_h - box_t"}, {"x": "tall_w - 2*box_t", "y": cd, "z": "box_t"})
     panel(tc, "Back", "y", {"x": "0", "y": "0", "z": "gap"}, {"x": "tall_w", "y": "back_t", "z": "tall_h"})
-    panel(tc, "RailTop", "y", {"x": "ply", "y": "back_t", "z": "gap + tall_h - ply - rail_h"}, {"x": "tall_w - 2*ply", "y": "rail_t", "z": "rail_h"})
-    panel(tc, "RailBottom", "y", {"x": "ply", "y": "back_t", "z": "gap + ply"}, {"x": "tall_w - 2*ply", "y": "rail_t", "z": "rail_h"})
+    panel(tc, "RailTop", "y", {"x": "box_t", "y": "back_t", "z": "gap + tall_h - box_t - rail_h"}, {"x": "tall_w - 2*box_t", "y": "rail_t", "z": "rail_h"})
+    panel(tc, "RailBottom", "y", {"x": "box_t", "y": "back_t", "z": "gap + box_t"}, {"x": "tall_w - 2*box_t", "y": "rail_t", "z": "rail_h"})
     n = int(V["tall_shelves"])
     for i in range(1, n + 1):
         panel(tc, "Shelf%d" % i, "z",
-              {"x": "ply", "y": "back_t + ply", "z": "gap + %d*tall_h/(tall_shelves+1) - ply/2" % i},
-              {"x": "tall_w - 2*ply", "y": "tall_depth - back_t - 2*ply", "z": "ply"})
-    nd = int(V["tall_doors"])
-    for k in range(nd):   # end_gap at the left wall; right door edge flush with the exposed right side
-        panel(tc, "Door%d" % (k + 1), "y",
-              {"x": "end_gap + %d*(tall_door_w + reveal)" % k, "y": "tall_depth - ply", "z": "gap"},
-              {"x": "tall_door_w", "y": "ply", "z": "tall_h"})
+              {"x": "box_t", "y": "back_t", "z": "gap + %d*tall_h/(tall_shelves+1) - box_t/2" % i},
+              {"x": "tall_w - 2*box_t", "y": "tall_depth - back_t - door_t - box_t", "z": "box_t"})
+    # end_gap at the left wall; right door edge flush with the exposed right side; 5 hinges on the wall side
+    panel(tc, "Door", "y", {"x": "end_gap", "y": "tall_depth - door_t", "z": "gap"}, {"x": "tall_door_w", "y": "door_t", "z": "tall_h"})
 
-    # ---------------- TV cabinet: tv_boxes separate boxes, 2 bays each ----------------
-    tv = new_comp("TVCabinet")
-    cd = "tv_depth - back_t - ply"
-    nb = int(V["tv_boxes"])
-    for j in range(nb):
-        b = "B%d_" % (j + 1)
-        x0 = "tall_w + %d*box_w" % j
-        panel(tv, b + "LeftSide", "x", {"x": x0, "y": "back_t", "z": "gap"}, {"x": "ply", "y": cd, "z": "box_h"})
-        panel(tv, b + "RightSide", "x", {"x": x0 + " + box_w - ply", "y": "back_t", "z": "gap"}, {"x": "ply", "y": cd, "z": "box_h"})
-        panel(tv, b + "Bottom", "z", {"x": x0 + " + ply", "y": "back_t", "z": "gap"}, {"x": "box_w - 2*ply", "y": cd, "z": "ply"})
-        panel(tv, b + "Top", "z", {"x": x0 + " + ply", "y": "back_t", "z": "gap + box_h - ply"}, {"x": "box_w - 2*ply", "y": cd, "z": "ply"})
-        panel(tv, b + "Back", "y", {"x": x0, "y": "0", "z": "gap"}, {"x": "box_w", "y": "back_t", "z": "box_h"})
-        rail_b = panel(tv, b + "Rail", "y", {"x": x0 + " + ply", "y": "back_t", "z": "gap + box_h - ply - rail_h"}, {"x": "box_w - 2*ply", "y": "rail_t", "z": "rail_h"})
-        part_b = panel(tv, b + "Partition", "x", {"x": x0 + " + ply + bay_w", "y": "back_t", "z": "gap + ply"}, {"x": "ply", "y": cd, "z": "box_h - 2*ply"})
-        # The rail runs the full inside width, so it crosses the centre partition. Cut the
-        # notch with the rail itself as the tool body: it then tracks rail_t and rail_h
-        # instead of being a hardcoded pocket. Hand saw and chisel in the real build.
-        notch(part_b, rail_b, tv.name + "_" + b + "PartitionNotch")
-        for k, side in enumerate(("L", "R")):
-            bx0 = "%s + ply + %d*(bay_w + ply)" % (x0, k)
-            panel(tv, b + "Shelf" + side, "z",
-                  {"x": bx0, "y": "back_t", "z": "gap + box_h/2 - ply/2"},
-                  {"x": "bay_w", "y": "tv_depth - back_t - ply", "z": "ply"})
-    # overlay doors run across box joints: 2 per box, evenly spaced over the whole TV run
-    for d in range(2 * nb):
+    # ---------------- TV run: 2x2 ladder, wall as back ----------------
+    tv = new_comp("TVRun")
+    nd = int(V["tv_doors"])
+    div_lo = ["div%d_x" % k for k in range(1, nd)]                 # left faces of dividers 1..5
+    bay_lo = ["tall_w"] + ["%s + tv_panel_t" % d for d in div_lo]  # clear-bay left edges
+    bay_hi = div_lo + ["wall_w"]                                   # clear-bay right edges
+    # bottom stringers, full length (cut as 3 pieces in the shop, joints under dividers 2 and 4)
+    panel(tv, "StringerBottomRear", "y", {"x": "tall_w", "y": "0", "z": "gap"}, {"x": "tv_w", "y": "stringer", "z": "stringer"})
+    panel(tv, "StringerBottomFront", "y", {"x": "tall_w", "y": "tv_cd - stringer", "z": "gap"}, {"x": "tv_w", "y": "stringer", "z": "stringer"})
+    # cross blocks between the stringers: both ends and centred under each divider
+    blocks = ["tall_w"] + ["%s + tv_panel_t/2 - stringer/2" % d for d in div_lo] + ["wall_w - stringer"]
+    for i, bx in enumerate(blocks):
+        panel(tv, "CrossBlock%d" % (i + 1), "x", {"x": bx, "y": "stringer", "z": "gap"}, {"x": "stringer", "y": "tv_cd - 2*stringer", "z": "stringer"})
+    # three bottoms on the stringers, joints under dividers 2 and 4
+    joints = ["tall_w", "div2_x + tv_panel_t/2", "div4_x + tv_panel_t/2", "wall_w"]
+    for i in range(3):
+        panel(tv, "Bottom%d" % (i + 1), "z", {"x": joints[i], "y": "0", "z": "gap + stringer"},
+              {"x": "(%s) - (%s)" % (joints[i + 1], joints[i]), "y": "tv_cd", "z": "tv_panel_t"})
+    # top-rear member: three 2x4 rails end to end, screwed to the studs
+    rails = []
+    for j in range(3):
+        rails.append(panel(tv, "Rail%d" % (j + 1), "y", {"x": "tall_w + %d*rail_len" % j, "y": "0", "z": "gap + tv_h - slab_t - rail_h"},
+                           {"x": "rail_len", "y": "rail_t", "z": "rail_h"}))
+    # dividers on the bottom panel, notched rear-top for the rail (rail body is the cutting tool)
+    for k, dx in enumerate(div_lo):
+        dv = panel(tv, "Divider%d" % (k + 1), "x", {"x": dx, "y": "0", "z": "gap + stringer + tv_panel_t"},
+                   {"x": "tv_panel_t", "y": "tv_cd", "z": "div_h"})
+        dlo, dhi = xrange_of(dv)
+        tools = [r for r in rails if xrange_of(r)[1] > dlo + 1e-6 and xrange_of(r)[0] < dhi - 1e-6]
+        notch(dv, tools, tv.name + "_Divider%dNotch" % (k + 1))
+    # top-front stringers: six separate pieces between dividers, no notch at the front
+    for i in range(nd):
+        panel(tv, "StringerTopFront%d" % (i + 1), "y", {"x": bay_lo[i], "y": "tv_cd - stringer", "z": "gap + tv_h - slab_t - stringer"},
+              {"x": "(%s) - (%s)" % (bay_hi[i], bay_lo[i]), "y": "stringer", "z": "stringer"})
+    # doors: door 1 hinges on the tall cabinet side (half-overlay hinge on a 5/8 packer, or inset-crank), doors 2-6 on the divider to their left (half overlay)
+    for d in range(nd):
         panel(tv, "Door%d" % (d + 1), "y",
-              {"x": "tall_w + end_gap + %d*(tv_door_w + reveal)" % d, "y": "tv_depth - ply", "z": "gap"},
-              {"x": "tv_door_w", "y": "ply", "z": "tv_door_h"})
-    # continuous top slab: rear wall to door face, tall cabinet side to right wall
-    panel(tv, "TopSlab", "z", {"x": "tall_w", "y": "0", "z": "gap + box_h"}, {"x": "tv_w", "y": "tv_depth + top_overhang", "z": "top_t"})
+              {"x": "tall_w + end_gap + %d*(tv_door_w + reveal)" % d, "y": "tv_depth - door_t", "z": "gap"},
+              {"x": "tv_door_w", "y": "door_t", "z": "tv_door_h"})
+    # top slab in two pieces, joint over the middle of divider 3
+    slab_joint = "div3_x + tv_panel_t/2"
+    panel(tv, "TopSlab1", "z", {"x": "tall_w", "y": "0", "z": "gap + tv_h - slab_t"},
+          {"x": "(%s) - tall_w" % slab_joint, "y": "tv_depth + top_overhang", "z": "slab_t"})
+    panel(tv, "TopSlab2", "z", {"x": slab_joint, "y": "0", "z": "gap + tv_h - slab_t"},
+          {"x": "wall_w - (%s)" % slab_joint, "y": "tv_depth + top_overhang", "z": "slab_t"})
 
-    # ---------------- Kick plates, recessed, stepped at the tall cabinet ----------------
+    # ---------------- Kick plates (5/8 MDF), recessed, stepped at the tall cabinet ----------------
     kk = new_comp("Kick")
-    panel(kk, "Tall", "y", {"x": "0", "y": "tall_depth - tall_kick_setback - ply", "z": "0"}, {"x": "tall_w", "y": "ply", "z": "gap"})
-    panel(kk, "Return", "x", {"x": "tall_w - ply", "y": "tv_depth - kick_setback - ply", "z": "0"},
-          {"x": "ply", "y": "tall_depth - tall_kick_setback - ply - (tv_depth - kick_setback - ply)", "z": "gap"})
-    panel(kk, "TV", "y", {"x": "tall_w", "y": "tv_depth - kick_setback - ply", "z": "0"}, {"x": "tv_w", "y": "ply", "z": "gap"})
+    panel(kk, "Tall", "y", {"x": "0", "y": "tall_depth - tall_kick_setback - door_t", "z": "0"}, {"x": "tall_w", "y": "door_t", "z": "gap"})
+    panel(kk, "Return", "x", {"x": "tall_w - door_t", "y": "tv_depth - kick_setback - door_t", "z": "0"},
+          {"x": "door_t", "y": "tall_depth - tall_kick_setback - door_t - (tv_depth - kick_setback - door_t)", "z": "gap"})
+    panel(kk, "TV", "y", {"x": "tall_w", "y": "tv_depth - kick_setback - door_t", "z": "0"}, {"x": "tv_w", "y": "door_t", "z": "gap"})
 
     # selection sets (click one in the browser, press V to hide/show)
     for s_ in list(design.selectionSets):
         s_.deleteMe()
     def _rule(prefix=None, has=None):
         return lambda nm: (not prefix or nm.startswith(prefix)) and (not has or has in nm)
-    for nm, rule in [("Tall cabinet", _rule(prefix="TallCabinet_")), ("TV cabinet", _rule(prefix="TVCabinet_")),
-                     ("Doors", _rule(has="Door")), ("TV top slab", _rule(prefix="TVCabinet_TopSlab")),
-                     ("Shelves", _rule(has="Shelf")), ("Kick", _rule(prefix="Kick_")),
-                     ("Rails (2x4)", _rule(has="Rail"))]:
+    for nm, rule in [("Tall cabinet", _rule(prefix="TallCabinet_")), ("TV run", _rule(prefix="TVRun_")),
+                     ("Doors", _rule(has="Door")), ("TV top slab", _rule(prefix="TVRun_TopSlab")),
+                     ("Ladder (2x2)", lambda nm: "Stringer" in nm or "CrossBlock" in nm),
+                     ("Kick", _rule(prefix="Kick_")), ("Rails (2x4)", _rule(has="Rail"))]:
         design.selectionSets.add([b for b in root.bRepBodies if rule(b.name)], nm)
 
-    out.append("gap = %.4f, tv_w = %.4f, box_w = %.4f, bay_w = %.4f, tv_door %.4f x %.4f, tall_door_w %.4f" % (V["gap"], V["tv_w"], V["box_w"], V["bay_w"], V["tv_door_w"], V["tv_door_h"], V["tall_door_w"]))
+    out.append("gap = %.4f, tv_w = %.4f, tv_door %.4f x %.4f, div_h %.4f, tall_door_w %.4f, rail_len %.4f" % (
+        V["gap"], V["tv_w"], V["tv_door_w"], V["tv_door_h"], V["div_h"], V["tall_door_w"], V["rail_len"]))
+    out.append("divider left faces X (from left wall): " + ", ".join("%d: %.4f" % (k, V["div%d_x" % k]) for k in range(1, nd)))
+    out.append("bodies: %d" % root.bRepBodies.count)
     print("\n".join(out))
 
 if __name__ == "__main__":

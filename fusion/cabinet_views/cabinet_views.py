@@ -7,7 +7,7 @@
 import adsk.core, adsk.fusion
 
 INTERACTIVE = True
-ISOLATE = None  # e.g. "TV boxes"
+ISOLATE = None  # e.g. "TV run"
 
 def _rule(prefix=None, has=None, without=()):
     def f(n):
@@ -22,11 +22,12 @@ def _rule(prefix=None, has=None, without=()):
 VIEWS = [
     ("All",          _rule()),
     ("Tall cabinet", _rule(prefix="TallCabinet_")),
-    ("TV cabinet",   _rule(prefix="TVCabinet_")),
+    ("TV run",       _rule(prefix="TVRun_")),
     ("Doors",        _rule(has="Door")),
-    ("TV top slab",  _rule(prefix="TVCabinet_TopSlab")),
-    ("Shelves",      _rule(has="Shelf")),
+    ("TV top slab",  _rule(prefix="TVRun_TopSlab")),
+    ("Ladder (2x2)", lambda n: "Stringer" in n or "CrossBlock" in n),
     ("Kick",         _rule(prefix="Kick_")),
+    ("Rails (2x4)",  _rule(has="Rail")),
 ]
 
 def run(context):
