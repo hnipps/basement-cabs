@@ -1,0 +1,8 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Harry Nicholls",
+    "description": {"": "Isolate a part of the built-in cabinet model and refresh its Selection Sets."},
+    "supportedOS": "windows|mac",
+    "editEnabled": true
+}
