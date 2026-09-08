@@ -14,6 +14,8 @@ painting; guide 6 tells you when to come back here.
 - Pockets go in the ends of the top, bottom and rails, screwing into the sides. Never
   drill pockets in the sides. Keep pockets on the top and bottom 2" clear of the
   front-left corner where the hinge plates land (guide 4).
+
+![Tall cabinet front elevation with the MDF side removed: pockets go in the ends of the top, bottom and rails, never in the sides](diagrams/03-tall-box-front.svg)
 - Ladder: #8 x 2-1/2 construction screws through 2x2 into 2x2, two per joint, glue on
   the cross blocks. Dividers: 1" pocket screws at the 1/2 setting from the divider
   face into the bottom and into the top-front stringer, pockets on the hinge-plate
@@ -24,6 +26,8 @@ painting; guide 6 tells you when to come back here.
 Parts: left side (5/8 spruce) and right side (5/8 MDF) 82-11/16 x 23-11/16; top and
 bottom 23-11/16 x 17-1/8; two rails 17-1/8 x 3-1/2 (2x4); back 82-11/16 x 18-3/8
 hardboard. Shelves (23-1/16 x 17-1/8) stay out until guide 4.
+
+![Tall cabinet side section: top and bottom on their ends, rails at the rear, back over the rear edges, door in front](diagrams/03-tall-box-section.svg)
 
 1. Drill the shelf-pin holes in both sides now, flat on the bench (guide 4, "Shelf
    pins"). Drill the hinge-plate holes in the left side too (guide 4, "Mounting
@@ -63,6 +67,8 @@ elsewhere the sleepers get shims.
 | E | 19-7/16 | top of the rails, dividers and top-front stringers; slab underside |
 | F | 19-15/16 | slab top = panelling bottom edge |
 
+![TV ladder cross-section through one bay, with lines A to F set out from the finished floor](diagrams/03-ladder-section.svg)
+
 1. **Lines.** Level line E on the rear wall from the tall cabinet to the right wall
    (laser, or a 4' level walked along a straight board). Mark line A and line B off it
    with a tape, not the floor.
@@ -74,6 +80,8 @@ elsewhere the sleepers get shims.
    along the rail faces and shim behind the rails until the run is straight within
    1/16; a bowed wall pushes the whole run out, and nothing else squares it. Sight
    down the rail line before the last screws.
+
+   ![TV ladder front elevation of the whole 181 run: rail and stringer joints, five dividers, seven cross blocks, six top front stringers](diagrams/03-ladder-elevation.svg)
 3. **Rear sleepers.** 2x2 blocks stood on end under line A, one under each cross
    block position (left end, the five divider centres at 30-29/64, 60-9/16, 90-43/64,
    120-49/64, 150-7/8 from the tall cabinet, and the right end), tight to the wall.
@@ -86,6 +94,8 @@ elsewhere the sleepers get shims.
 5. **Cross blocks.** Seven at 12-3/8, glued and screwed through the rear stringer into
    their ends (two #8 x 2-1/2 each): one against the tall cabinet's right side, one
    centred under each divider position, one at the right wall.
+
+   ![Bottom ladder in plan: two stringers, seven cross blocks, fourteen sleepers, and the bottom joints over cross blocks 2 and 4](diagrams/03-ladder-plan.svg)
 6. **Front sleepers and front stringer.** Front sleepers under the front end of each
    cross block, with their front face 12-7/8 from the wall (that is where the kick
    screws to them; the kick is recessed 2-1/2 behind the door face). Screw the front

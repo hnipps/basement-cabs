@@ -17,6 +17,8 @@ the #10 x 4" structural screws, the 2x2 offcuts and board #8, and guide 3 open a
    with the level and find the high spot; sleepers there are full height, everywhere
    else they get shims.
 
+![Rear wall elevation: lines A, E and F, the stud-finding band, the tall cabinet's rail heights and the right-wall stud check](diagrams/06-wall-elevation.svg)
+
 ## Sleepers
 
 2x2 blocks on end, 4-3/4 long, shimmed to line A. From board #8 and the 2x2
@@ -30,7 +32,11 @@ leftovers (they are already sleeper length):
 
 No adjustable legs and no kick clips: the kicks screw to the sleepers.
 
+![Plan of all 18 sleepers: four under the tall cabinet, fourteen under the seven TV cross block positions, dimensioned from the left wall](diagrams/06-sleeper-plan.svg)
+
 ## Order
+
+![Order of work: tall cabinet, TV ladder (guide 3 steps 1 to 10), kicks, doors, slab](diagrams/06-order.svg)
 
 **Tall cabinet first.**
 1. Set its four sleepers, stand the box on them against the left wall and rear wall.
@@ -43,6 +49,8 @@ No adjustable legs and no kick clips: the kicks screw to the sleepers.
 3. Pilot and drive #10 x 4" through the top rail and bottom rail into two studs each.
    Stack is rail 1-1/2 + hardboard 1/8 + drywall 1/2 = 2-1/8, leaving 1-7/8 in the
    stud. Check plumb after each screw; screws pull a box toward the wall.
+
+   ![Sections at a hanging rail: the tall cabinet screw stack, the TV rail stack, and shimming a leaning left wall](diagrams/06-tall-fixing-section.svg)
 
 **TV ladder.** Guide 3, "TV ladder", steps 1 to 10: rails to studs, rear sleepers,
 bottom rear stringer, cross blocks, front sleepers and stringer, bottoms, dividers,
@@ -70,6 +78,8 @@ front pair of tall sleepers. TV kick in two pieces, 90-11/16 and 90-5/16, joint 
 cross block 3's sleeper, front face 2-1/2 behind the door plane. The 10-15/16 return
 joins the two planes at the tall cabinet's right side, screwed to a 2x2 block behind
 it. Kicks come off for cleaning under the unit.
+
+![Kick plan: tall kick flush with the door face, TV kick in two pieces recessed 2-1/2, and the 10-15/16 return between the planes](diagrams/06-kick-plan.svg)
 
 ## Doors
 

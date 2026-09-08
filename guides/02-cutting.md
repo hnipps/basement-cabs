@@ -27,6 +27,8 @@ measured values already.
    the base to exactly its own offset. From now on the base edge is the cut line.
    Clamp it to the mark and cut.
 
+![Cross-section of the shop-made saw guide: 8 hardboard base, 3 MDF fence, base edge trimmed to the saw's offset](diagrams/02-saw-guide.svg)
+
 Use a fresh 40-tooth or finer blade. Spruce sheathing splinters: tape the line and
 cut with the good face down. For MDF doors, tape the line on both faces and cut with
 the show face down; the tape stops the edge chipping.
@@ -49,6 +51,8 @@ Check both sheet edges are straight before the first rip.
    short of the front edge). Then trim all five to 17-1/8 wide. Shelves drop in on
    pins, so take another 1/16 off their width (17-1/16) or they will need forcing.
 
+![5/8 spruce nest: tall left side plus five 17-1/4 blanks for top, bottom and shelves](diagrams/02-nest-spruce-58.svg)
+
 Sight each part for flatness after cutting; a shelf that rocks goes in the middle
 position where it matters least.
 
@@ -62,6 +66,8 @@ position where it matters least.
 | 1 | 60-9/16 (bottom 1, tall cabinet to divider 2 centre) | 2 x 12-1/2 |
 | 2 | 60-13/64 (bottom 2, divider 2 centre to divider 4 centre) | 2 x 12-1/2 |
 | 3 | 60-15/64 (bottom 3, divider 4 centre to right wall) | 2 x 12-1/2 |
+
+![1/2 spruce nest: three 15-3/8 strips of one bottom plus two dividers, and the divider notch](diagrams/02-nest-spruce-12.svg)
 
 Dividers are 15-3/8 x 12-1/2; six come off the sheet, five are used and one is a
 spare. Notch each divider's rear top corner 3-1/2 up x 1-1/2 in for the rail: hand
@@ -82,6 +88,8 @@ strip to 90-11/16 (TV kick, left piece).
 20" width rip two 4-15/16 strips: TV kick right piece 90-5/16, tall kick 18-3/8, kick
 return 10-15/16.
 
+![5/8 MDF Nest A: sheet 1 tall side, tall door and one kick strip; sheet 2 the six TV doors and the rest of the kicks](diagrams/02-nest-mdf-58.svg)
+
 The TV kick totals 181, cut as 90-11/16 + 90-5/16 so the joint lands behind cross
 block 3 (block centres are at 30-29/64, 60-9/16, 90-43/64, 120-49/64 and 150-7/8 from
 the tall cabinet), where a sleeper can back it. Nest B (all seven doors on one sheet: 18-1/8 + 14-3/8 + 14-3/8 +
@@ -98,6 +106,8 @@ the hinge-plate template.
 ### 1/8" hardboard (1 sheet, tall back)
 
 One piece 82-11/16 x 18-3/8. Leftover 29-5/8 x 96: saw-guide base, shelf-pin template.
+
+![1/2 MDF slab sheet (fence strip, two 16 slab strips) and the 1/8 hardboard sheet (tall back, saw-guide base)](diagrams/02-nest-mdf-12-hardboard.svg)
 
 ### 2x2 (8 boards)
 
@@ -131,6 +141,8 @@ Five crosscuts on the miter saw, no rips.
 | 6-1/2' #1 | TV rail 60-21/64 | 17-43/64 |
 | 47" | both tall rails 17-1/8 | 12-5/8 |
 | 6-1/2' #2 | untouched | 78" |
+
+![Crosscut plan for the eight 2x2 boards and the 2x4 stock on hand, with leftovers hatched](diagrams/02-sticks.svg)
 
 Run the block plane down both long edges of the tall rails' rear face to take the
 rounded factory arris off, so the hardboard back nails flat. The TV rails need no
