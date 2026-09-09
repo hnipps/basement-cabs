@@ -84,10 +84,25 @@ class Canvas:
             f"<circle cx='{self.X(x):.1f}' cy='{self.Y(y):.1f}' r='{r_px}' fill='{fill}' stroke='{stroke}'/>"
         )
 
-    def text(self, x, y, s, size=11, anchor="middle", color=LINE, rotate=0, weight="normal", dy=0):
-        """Text at model point; size in px. rotate in degrees about the anchor."""
+    def text_w(self, s, size):
+        """Estimated rendered width in px (Menlo/Consolas are ~0.62 em wide)."""
+        return len(str(s)) * size * 0.62
+
+    def text(self, x, y, s, size=11, anchor="middle", color=LINE, rotate=0, weight="normal",
+             dy=0, box=False):
+        """Text at model point; size in px. rotate in degrees about the anchor.
+        box=True paints a white rectangle behind the text so a line crossing it never
+        strikes the label through (rotated by the same transform)."""
         px, py = self.X(x), self.Y(y) + dy
         tr = f" transform='rotate({rotate} {px:.1f} {py:.1f})'" if rotate else ""
+        if box and str(s):
+            w = self.text_w(s, size) + 4
+            h = size * 1.25
+            bx = {"start": px - 2, "end": px - w + 2}.get(anchor, px - w / 2)
+            self.parts.append(
+                f"<rect x='{bx:.1f}' y='{py - h / 2:.1f}' width='{w:.1f}' height='{h:.1f}' "
+                f"fill='white' stroke='none'{tr}/>"
+            )
         self.parts.append(
             f"<text x='{px:.1f}' y='{py:.1f}' font-size='{size}' text-anchor='{anchor}' fill='{color}' "
             f"font-weight='{weight}' dominant-baseline='middle' {FONT}{tr}>{escape(str(s))}</text>"
@@ -103,29 +118,120 @@ class Canvas:
             self.text(x, y, s, size=size, anchor=anchor, color=color, rotate=rotate, dy=off + i * lh)
 
     # --- dimensions -----------------------------------------------------------
-    def dim_h(self, x1, x2, y, text=None, offset_px=-14, size=10, color=DIM, ext=True):
-        """Horizontal dimension between x1 and x2 drawn at model y. Text above."""
+    # A dimension is: two witness (extension) lines from the feature to the dimension
+    # line, the line itself with 45-degree ticks at both ends, and the value. Text sits
+    # along the line when it fits and steps outside one end when it does not, always on a
+    # white box so nothing strikes it through.
+    TICK = 4      # px, half-length of the 45-degree tick
+    GAP = 2       # px, gap between the feature and the start of a witness line
+
+    def _tick(self, px, py, color):
+        t = self.TICK * 0.7071
+        self.parts.append(
+            f"<line x1='{px - t:.1f}' y1='{py + t:.1f}' x2='{px + t:.1f}' y2='{py - t:.1f}' "
+            f"stroke='{color}' stroke-width='0.9'/>"
+        )
+
+    def _witness_px(self, ax, ay, bx, by, color):
+        """Thin extension line between two pixel points, backed off GAP px from a."""
+        dx, dy = bx - ax, by - ay
+        n = (dx * dx + dy * dy) ** 0.5
+        if n < self.GAP + 1:
+            return
+        ux, uy = dx / n, dy / n
+        self.parts.append(
+            f"<line x1='{ax + ux * self.GAP:.1f}' y1='{ay + uy * self.GAP:.1f}' "
+            f"x2='{bx + ux * 2:.1f}' y2='{by + uy * 2:.1f}' stroke='{color}' stroke-width='0.6' opacity='0.8'/>"
+        )
+
+    def dim_h(self, x1, x2, y, text=None, offset_px=-14, size=10, color=DIM, ext=True,
+              witness=None, fit="auto", box=True):
+        """Horizontal dimension between model x1 and x2, drawn on the line at model y.
+
+        witness: model y of the feature edge (one value, or (y_at_x1, y_at_x2)); a thin
+                 extension line is drawn from there to the dimension line at each end.
+        offset_px: text offset from the line; negative = above (screen up).
+        fit: "auto" puts the text along the line when it fits, else just outside the
+             right end; "along" / "right" / "left" force a placement.
+        """
         t = frac(abs(x2 - x1)) if text is None else text
         self.line(x1, y, x2, y, stroke=color, sw=0.9)
+        p1, p2, py = self.X(x1), self.X(x2), self.Y(y)
         if ext:
-            for x in (x1, x2):
-                px, py = self.X(x), self.Y(y)
-                self.parts.append(f"<line x1='{px:.1f}' y1='{py-4:.1f}' x2='{px:.1f}' y2='{py+4:.1f}' stroke='{color}' stroke-width='0.9'/>")
-        self.text((x1 + x2) / 2, y, t, size=size, color=color, dy=offset_px)
+            for px in (p1, p2):
+                self._tick(px, py, color)
+        if witness is not None:
+            w1, w2 = witness if isinstance(witness, (tuple, list)) else (witness, witness)
+            self._witness_px(p1, self.Y(w1), p1, py, color)
+            self._witness_px(p2, self.Y(w2), p2, py, color)
+        if not t:
+            return
+        span = abs(p2 - p1)
+        place = fit
+        if fit == "auto":
+            place = "along" if self.text_w(t, size) + 6 <= span else "right"
+        if place == "along":
+            self.text((x1 + x2) / 2, y, t, size=size, color=color, dy=offset_px, box=box)
+        else:
+            px = max(p1, p2) + 6 if place == "right" else min(p1, p2) - 6
+            anchor = "start" if place == "right" else "end"
+            self._text_px(px, py, t, size, anchor, color, box=box)
 
-    def dim_v(self, y1, y2, x, text=None, offset_px=-12, size=10, color=DIM, ext=True, rotate=-90):
-        """Vertical dimension between y1 and y2 drawn at model x. Text rotated, left of line."""
+    def dim_v(self, y1, y2, x, text=None, offset_px=-12, size=10, color=DIM, ext=True,
+              rotate=-90, witness=None, fit="auto", box=True):
+        """Vertical dimension between model y1 and y2, drawn on the line at model x.
+
+        witness: model x of the feature edge (one value, or (x_at_y1, x_at_y2)).
+        offset_px: text offset from the line; negative = left of it.
+        fit: "auto" rotates the text along the line when it fits, else writes it
+             horizontally beside the line's midpoint on the offset side; "along" /
+             "beside" force a placement.
+        """
         t = frac(abs(y2 - y1)) if text is None else text
         self.line(x, y1, x, y2, stroke=color, sw=0.9)
+        px, q1, q2 = self.X(x), self.Y(y1), self.Y(y2)
         if ext:
-            for y in (y1, y2):
-                px, py = self.X(x), self.Y(y)
-                self.parts.append(f"<line x1='{px-4:.1f}' y1='{py:.1f}' x2='{px+4:.1f}' y2='{py:.1f}' stroke='{color}' stroke-width='0.9'/>")
-        px, py = self.X(x) + offset_px, self.Y((y1 + y2) / 2)
+            for py in (q1, q2):
+                self._tick(px, py, color)
+        if witness is not None:
+            w1, w2 = witness if isinstance(witness, (tuple, list)) else (witness, witness)
+            self._witness_px(self.X(w1), q1, px, q1, color)
+            self._witness_px(self.X(w2), q2, px, q2, color)
+        if not t:
+            return
+        span = abs(q2 - q1)
+        place = fit
+        if fit == "auto":
+            place = "along" if self.text_w(t, size) + 6 <= span else "beside"
+        pm = (q1 + q2) / 2
+        if place == "along":
+            self._text_px(px + offset_px, pm, t, size, "middle", color, rotate=rotate, box=box)
+        else:
+            anchor = "end" if offset_px < 0 else "start"
+            self._text_px(px + (offset_px - 2 if offset_px < 0 else offset_px + 2), pm, t,
+                          size, anchor, color, box=box)
+
+    def _text_px(self, px, py, s, size, anchor, color, rotate=0, box=True):
+        """Text placed by pixel coordinates (used by the dimension helpers)."""
+        tr = f" transform='rotate({rotate} {px:.1f} {py:.1f})'" if rotate else ""
+        if box and str(s):
+            w = self.text_w(s, size) + 4
+            h = size * 1.25
+            bx = {"start": px - 2, "end": px - w + 2}.get(anchor, px - w / 2)
+            self.parts.append(
+                f"<rect x='{bx:.1f}' y='{py - h / 2:.1f}' width='{w:.1f}' height='{h:.1f}' "
+                f"fill='white' stroke='none'{tr}/>"
+            )
         self.parts.append(
-            f"<text x='{px:.1f}' y='{py:.1f}' font-size='{size}' text-anchor='middle' fill='{color}' "
-            f"dominant-baseline='middle' {FONT} transform='rotate({rotate} {px:.1f} {py:.1f})'>{escape(t)}</text>"
+            f"<text x='{px:.1f}' y='{py:.1f}' font-size='{size}' text-anchor='{anchor}' fill='{color}' "
+            f"dominant-baseline='middle' {FONT}{tr}>{escape(str(s))}</text>"
         )
+
+    def leader(self, x1, y1, x2, y2, color="#777", dot=True):
+        """Leader from a feature point (x1, y1) to a label anchor (x2, y2); dot on the feature."""
+        self.line(x1, y1, x2, y2, stroke=color, sw=0.7)
+        if dot:
+            self.circle(x1, y1, 1.6, fill=color)
 
     def note(self, x, y, s, size=10, anchor="start", color=LINE):
         self.text(x, y, s, size=size, anchor=anchor, color=color)

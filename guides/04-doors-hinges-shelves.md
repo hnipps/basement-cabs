@@ -18,6 +18,8 @@ floor), top edge 1/8 under the slab. Reveal 1/8 between doors, 1/4 at the tall
 cabinet and at the right wall. The tall door is flush with the exposed right side and
 1/4 off the left wall.
 
+![Front elevation with every door closed: the tall door at the left wall, TV doors D1 to D6 with their hinge edges and swing marked, the kick band under both units, and the reveals that set the door sizes](diagrams/04-doors-closed-elevation.svg)
+
 If the installed TV run is not 181 wide, recut the six doors to (actual width
 minus 2 x 1/4 minus 5 x 1/8) divided by 6, and move the dividers to match (guide 3
 step 8: each divider's left face is door width + 1/8 + 9 mm - 1/2 to the right of the
@@ -39,15 +41,21 @@ plate. 110° not 155° or 170°, which throw the hinge edge out further.
 
 Why: the tall door's edge sits 1/4 from the wall on a 5/8 side, so the door covers
 3/8 (9.5 mm) of the side, a half-overlay cover. Doors 2 to 6 cover 9 mm of a 1/2
-divider, leaving 1/8 plus a hair for the neighbour. Door 1's hinge edge sits 1/4
+divider (nominal; 11/32 to 23/64 as built, inside the cover adjustment), leaving 1/8
+plus a hair for the neighbour. Door 1's hinge edge sits 1/4
 INSIDE the tall cabinet's right face (the face carries on 8-7/16 past the door), so
 no hinge on that face lands the door: glue and screw a 5/8 packer (spruce offcut,
-12-1/2 tall x 3 wide) to the tall side's outer face at the plate height, 37 mm zone,
-and mount the plates on the packer. Half overlay on the packer puts the edge 1/64
+11 tall x 3 wide) to the tall side's outer face at the plate height, 37 mm zone,
+and mount the plates on the packer. The packer stands on line C (6-15/16) and stops
+1-1/2 under line E, so bay 1's top-front stringer 2x2 end block (guide 3 step 9) sits
+above it on the same face; plate centres 1-1/2 and 8-7/8 above line C are both on the
+packer. Half overlay on the packer puts the edge 1/64
 right of the model; the hinge adjustment eats that. The alternative in `CUTLIST.md`,
 an inset-crank hinge straight on the face, needs a 6 mm inset cover; check the
 maker's chart before buying it. A full overlay hinge on the 5/8 packer puts the
 edge flush with the face with no swing gap; do not use that pairing.
+
+![Hinge plan detail looking down: the 1/2 divider splitting into 9 mm of cover, the 1/8 reveal and a bare 1/64 under the neighbour's free edge, with door 1's 5/8 packer on the tall cabinet's right side beside it](diagrams/04-hinge-plan-detail.svg)
 
 ## Hinge cups
 
@@ -88,7 +96,7 @@ the plate slot moves it up and down, the rear screw changes cover. Set 1/4 to th
 wall side and flush at the right. Unclip for painting; the arms stay set. TV doors
 can only be test-hung on the wall (guide 6); check each divider's plates with a door
 on the bench instead: clip the door on a divider lying flat and confirm the door
-edge lands 9 mm onto the divider.
+edge lands about 9 mm (11/32 to 23/64) onto the divider.
 
 ## Hang (during guide 6)
 

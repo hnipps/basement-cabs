@@ -14,7 +14,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-MODULES = ["diag_02", "diag_03", "diag_06"]
+MODULES = ["diag_02", "diag_03", "diag_04", "diag_06"]
 
 
 def main():

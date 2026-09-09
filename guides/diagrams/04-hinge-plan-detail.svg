@@ -1,0 +1,194 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1773 484' width='1773' height='484'><title>Hinge plan detail: the cover split at a divider, and door 1 on its packer at the tall cabinet</title><defs><pattern id='waste' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'><line x1='0' y1='0' x2='0' y2='8' stroke='#999' stroke-width='1'/></pattern></defs><rect width='100%' height='100%' fill='white'/>
+<rect x='349.8' y='101.2' width='22.0' height='149.9' fill='#f2e2c2' stroke='#111' stroke-width='1.4' opacity='1.0'/>
+<line x1='349.8' y1='101.2' x2='355.3' y2='108.2' stroke='#111' stroke-width='1.0'/>
+<line x1='355.3' y1='108.2' x2='360.8' y2='94.2' stroke='#111' stroke-width='1.0'/>
+<line x1='360.8' y1='94.2' x2='366.3' y2='108.2' stroke='#111' stroke-width='1.0'/>
+<line x1='366.3' y1='108.2' x2='371.8' y2='101.2' stroke='#111' stroke-width='1.0'/>
+<rect x='85.8' y='250.8' width='264.7' height='27.5' fill='#c9b6a0' stroke='#111' stroke-width='1.4' opacity='1.0'/>
+<rect x='356.0' y='250.8' width='257.8' height='27.5' fill='#c9b6a0' stroke='#111' stroke-width='1.4' opacity='1.0'/>
+<line x1='85.8' y1='250.8' x2='92.8' y2='257.7' stroke='#111' stroke-width='1.0'/>
+<line x1='92.8' y1='257.7' x2='78.8' y2='264.5' stroke='#111' stroke-width='1.0'/>
+<line x1='78.8' y1='264.5' x2='92.8' y2='271.4' stroke='#111' stroke-width='1.0'/>
+<line x1='92.8' y1='271.4' x2='85.8' y2='278.3' stroke='#111' stroke-width='1.0'/>
+<line x1='613.8' y1='250.8' x2='620.8' y2='257.7' stroke='#111' stroke-width='1.0'/>
+<line x1='620.8' y1='257.7' x2='606.8' y2='264.5' stroke='#111' stroke-width='1.0'/>
+<line x1='606.8' y1='264.5' x2='620.8' y2='271.4' stroke='#111' stroke-width='1.0'/>
+<line x1='620.8' y1='271.4' x2='613.8' y2='278.3' stroke='#111' stroke-width='1.0'/>
+<text x='213.4' y='264.5' font-size='9.0' text-anchor='middle' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>door D(k-1), free edge</text>
+<text x='543.4' y='264.5' font-size='9.0' text-anchor='middle' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>door D(k), opens right</text>
+<rect x='364.9' y='250.8' width='60.6' height='21.7' fill='white' stroke='#111' stroke-width='1.1' opacity='1.0'/>
+<circle cx='395.2' cy='261.8' r='1.8' fill='#8a3b12' stroke='none'/>
+<rect x='371.8' y='151.8' width='5.2' height='77.0' fill='#e0a850' stroke='#111' stroke-width='1.2' opacity='1.0'/>
+<circle cx='374.5' cy='186.2' r='2.2' fill='#111' stroke='none'/>
+<line x1='395.2' y1='261.8' x2='380.6' y2='220.9' stroke='#111' stroke-width='1.6'/>
+<line x1='380.6' y1='220.9' x2='384.1' y2='202.4' stroke='#111' stroke-width='1.6'/>
+<line x1='384.1' y1='202.4' x2='377.3' y2='202.4' stroke='#111' stroke-width='1.6'/>
+<line x1='438.3' y1='292.8' x2='437.5' y2='296.7' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='437.5' y1='296.7' x2='436.6' y2='300.5' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='436.6' y1='300.5' x2='435.5' y2='304.2' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='435.5' y1='304.2' x2='434.2' y2='307.9' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='434.2' y1='307.9' x2='432.7' y2='311.6' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='432.7' y1='311.6' x2='431.0' y2='315.1' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='431.0' y1='315.1' x2='429.2' y2='318.6' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='429.2' y1='318.6' x2='427.2' y2='322.0' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='427.2' y1='322.0' x2='425.1' y2='325.3' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='425.1' y1='325.3' x2='422.8' y2='328.5' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='422.8' y1='328.5' x2='420.4' y2='331.6' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='420.4' y1='331.6' x2='417.8' y2='334.6' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='417.8' y1='334.6' x2='415.1' y2='337.4' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='415.1' y1='337.4' x2='412.3' y2='340.1' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='412.3' y1='340.1' x2='409.3' y2='342.7' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='409.3' y1='342.7' x2='406.2' y2='345.1' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='406.2' y1='345.1' x2='403.0' y2='347.4' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='403.0' y1='347.4' x2='399.7' y2='349.6' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='399.7' y1='349.6' x2='396.3' y2='351.5' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='396.3' y1='351.5' x2='392.8' y2='353.3' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='392.8' y1='353.3' x2='389.3' y2='355.0' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='389.3' y1='355.0' x2='385.6' y2='356.5' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='385.6' y1='356.5' x2='381.9' y2='357.8' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='381.9' y1='357.8' x2='378.2' y2='358.9' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='378.2' y1='358.9' x2='374.4' y2='359.9' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<line x1='374.4' y1='359.9' x2='370.5' y2='360.6' stroke='#8a6d3b' stroke-width='0.9' stroke-dasharray='7,4'/>
+<polygon points='370.4,360.8 382.4,352.7 384.5,364.4' fill='#8a6d3b' stroke='#8a6d3b' stroke-width='0.6'/>
+<text x='455.4' y='330.0' font-size='8.5' text-anchor='start' fill='#8a6d3b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>swing, 110 deg</text>
+<text x='46.2' y='123.2' font-size='8.5' text-anchor='start' fill='#777' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>REAR (toward the wall)</text>
+<text x='46.2' y='305.8' font-size='8.5' text-anchor='start' fill='#777' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>FRONT (the room)</text>
+<line x1='349.8' y1='74.8' x2='371.8' y2='74.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='347.0' y1='77.6' x2='352.6' y2='72.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='369.0' y1='77.6' x2='374.6' y2='72.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='349.8' y1='99.2' x2='349.8' y2='72.8' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='371.8' y1='99.2' x2='371.8' y2='72.8' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='375.8' y='68.6' width='134.2' height='12.5' fill='white' stroke='none'/>
+<text x='377.8' y='74.8' font-size='10' text-anchor='start' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>1/2 divider (12.7 mm)</text>
+<line x1='633.6' y1='250.8' x2='633.6' y2='278.3' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='630.8' y1='253.6' x2='636.4' y2='248.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='630.8' y1='281.1' x2='636.4' y2='275.5' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='615.8' y1='250.8' x2='635.6' y2='250.8' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='615.8' y1='278.3' x2='635.6' y2='278.3' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='645.6' y='258.3' width='115.6' height='12.5' fill='white' stroke='none'/>
+<text x='647.6' y='264.5' font-size='10' text-anchor='start' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>5/8 (15.9 mm) door</text>
+<line x1='261.8' y1='186.2' x2='261.8' y2='250.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='259.0' y1='189.0' x2='264.6' y2='183.3' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='259.0' y1='253.6' x2='264.6' y2='248.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='369.8' y1='186.2' x2='259.8' y2='186.2' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='369.8' y1='250.8' x2='259.8' y2='250.8' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='42.2' y='212.2' width='208.6' height='12.5' fill='white' stroke='none'/>
+<text x='248.8' y='218.5' font-size='10' text-anchor='end' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>1-15/32 (37 mm) to the front edge</text>
+<line x1='356.0' y1='310.2' x2='371.8' y2='310.2' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='353.2' y1='313.0' x2='358.8' y2='307.4' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='369.0' y1='313.0' x2='374.6' y2='307.4' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='356.0' y1='280.3' x2='356.0' y2='312.2' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='371.8' y1='280.3' x2='371.8' y2='312.2' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='363.5' y1='310.2' x2='325.6' y2='310.2' stroke='#c0392b' stroke-width='0.7'/>
+<rect x='203.2' y='303.9' width='115.6' height='12.5' fill='white' stroke='none'/>
+<text x='316.8' y='310.2' font-size='10' text-anchor='end' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>cover 9 mm nominal</text>
+<line x1='350.5' y1='341.0' x2='356.0' y2='341.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='347.7' y1='343.8' x2='353.3' y2='338.2' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='353.2' y1='343.8' x2='358.8' y2='338.2' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='350.5' y1='280.3' x2='350.5' y2='343.0' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='356.0' y1='280.3' x2='356.0' y2='343.0' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='353.2' y1='341.0' x2='325.6' y2='341.0' stroke='#c0392b' stroke-width='0.7'/>
+<rect x='197.0' y='334.7' width='121.8' height='12.5' fill='white' stroke='none'/>
+<text x='316.8' y='341.0' font-size='10' text-anchor='end' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>1/8 reveal (3.2 mm)</text>
+<line x1='349.8' y1='371.8' x2='350.5' y2='371.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='347.0' y1='374.6' x2='352.6' y2='369.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='347.7' y1='374.6' x2='353.3' y2='369.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='349.8' y1='280.3' x2='349.8' y2='373.8' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='350.5' y1='280.3' x2='350.5' y2='373.8' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='349.8' y1='371.8' x2='325.6' y2='371.8' stroke='#c0392b' stroke-width='0.7'/>
+<rect x='184.6' y='365.5' width='134.2' height='12.5' fill='white' stroke='none'/>
+<text x='316.8' y='371.8' font-size='10' text-anchor='end' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>0.525 mm (about 1/64)</text>
+<line x1='377.3' y1='186.2' x2='648.9' y2='167.2' stroke='#777' stroke-width='0.7'/>
+<circle cx='377.3' cy='186.2' r='1.6' fill='#777' stroke='none'/>
+<text x='657.8' y='127.8' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>half-overlay plate (9 mm nominal cover, 0 mm plate) on</text>
+<text x='657.8' y='139.1' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>divider&#x27;s RIGHT face -- the face inside D(k)&#x27;s own bay.</text>
+<text x='657.8' y='150.3' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>Holes 1-15/32 (37 mm) back from the front edge, 32 mm</text>
+<text x='657.8' y='161.6' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>apart in HEIGHT, so in plan they sit on top of each</text>
+<text x='657.8' y='172.8' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>other. Plate centres 1-1/2 and 8-7/8 above the divider</text>
+<text x='657.8' y='184.1' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>bottom (line C, 6-15/16, which is 2 above the door bottom).</text>
+<text x='657.8' y='195.3' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>Plate screws 12 mm MAX: the 15 mm screws in the</text>
+<text x='657.8' y='206.6' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>hinge box break through 1/2 ply.</text>
+<line x1='395.2' y1='272.1' x2='648.9' y2='343.2' stroke='#777' stroke-width='0.7'/>
+<circle cx='395.2' cy='272.1' r='1.6' fill='#777' stroke='none'/>
+<text x='657.8' y='331.9' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>35 mm cup, 12.5 mm deep, in the door&#x27;s BACK face;</text>
+<text x='657.8' y='343.2' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>centre 7/8 (22.5 mm) in from the hinge edge,</text>
+<text x='657.8' y='354.4' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>3-1/2 from the door top and bottom</text>
+<text x='41.8' y='41.8' font-size='9.5' text-anchor='start' fill='#111' font-weight='bold' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>A -- at a divider: doors 2 to 6, hinged on dividers 1 to 5</text>
+<rect x='1044.2' y='101.2' width='27.5' height='237.9' fill='#c9b6a0' stroke='#111' stroke-width='1.4' opacity='1.0'/>
+<line x1='1044.2' y1='101.2' x2='1051.0' y2='108.2' stroke='#111' stroke-width='1.0'/>
+<line x1='1051.0' y1='108.2' x2='1057.8' y2='94.2' stroke='#111' stroke-width='1.0'/>
+<line x1='1057.8' y1='94.2' x2='1064.6' y2='108.2' stroke='#111' stroke-width='1.0'/>
+<line x1='1064.6' y1='108.2' x2='1071.4' y2='101.2' stroke='#111' stroke-width='1.0'/>
+<line x1='1044.2' y1='338.8' x2='1051.0' y2='345.8' stroke='#111' stroke-width='1.0'/>
+<line x1='1051.0' y1='345.8' x2='1057.8' y2='331.8' stroke='#111' stroke-width='1.0'/>
+<line x1='1057.8' y1='331.8' x2='1064.6' y2='345.8' stroke='#111' stroke-width='1.0'/>
+<line x1='1064.6' y1='345.8' x2='1071.4' y2='338.8' stroke='#111' stroke-width='1.0'/>
+<rect x='1071.4' y='118.8' width='27.5' height='132.0' fill='#e9d3a8' stroke='#111' stroke-width='1.4' opacity='1.0'/>
+<rect x='1082.7' y='250.8' width='226.2' height='27.5' fill='#c9b6a0' stroke='#111' stroke-width='1.4' opacity='1.0'/>
+<line x1='1308.9' y1='250.8' x2='1315.9' y2='257.7' stroke='#111' stroke-width='1.0'/>
+<line x1='1315.9' y1='257.7' x2='1301.8' y2='264.5' stroke='#111' stroke-width='1.0'/>
+<line x1='1301.8' y1='264.5' x2='1315.9' y2='271.4' stroke='#111' stroke-width='1.0'/>
+<line x1='1315.9' y1='271.4' x2='1308.9' y2='278.3' stroke='#111' stroke-width='1.0'/>
+<rect x='1091.6' y='250.8' width='60.6' height='21.7' fill='white' stroke='#111' stroke-width='1.1' opacity='1.0'/>
+<circle cx='1121.9' cy='261.8' r='1.8' fill='#8a3b12' stroke='none'/>
+<text x='1218.1' y='264.5' font-size='9.0' text-anchor='middle' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>door D1, opens right</text>
+<rect x='1099.2' y='151.8' width='5.2' height='77.0' fill='#e0a850' stroke='#111' stroke-width='1.2' opacity='1.0'/>
+<circle cx='1101.9' cy='186.2' r='2.2' fill='#111' stroke='none'/>
+<line x1='1121.9' y1='261.8' x2='1129.4' y2='220.9' stroke='#111' stroke-width='1.6'/>
+<line x1='1129.4' y1='220.9' x2='1132.9' y2='202.4' stroke='#111' stroke-width='1.6'/>
+<line x1='1132.9' y1='202.4' x2='1104.7' y2='202.4' stroke='#111' stroke-width='1.6'/>
+<line x1='1009.8' y1='250.8' x2='1330.9' y2='250.8' stroke='#3b6ea5' stroke-width='0.9' stroke-dasharray='8,4'/>
+<text x='1000.9' y='238.4' font-size='8.5' text-anchor='end' fill='#3b6ea5' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>TV door plane, 15-3/8 from the wall</text>
+<line x1='1044.2' y1='74.8' x2='1071.4' y2='74.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1041.3' y1='77.6' x2='1047.0' y2='72.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1068.6' y1='77.6' x2='1074.2' y2='72.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1044.2' y1='99.2' x2='1044.2' y2='72.8' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='1071.4' y1='99.2' x2='1071.4' y2='72.8' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='1075.4' y='68.6' width='159.0' height='12.5' fill='white' stroke='none'/>
+<text x='1077.4' y='74.8' font-size='10' text-anchor='start' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>5/8 tall right side (MDF)</text>
+<line x1='1071.4' y1='310.2' x2='1082.7' y2='310.2' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1068.6' y1='313.0' x2='1074.2' y2='307.4' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1079.8' y1='313.0' x2='1085.5' y2='307.4' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1071.4' y1='280.3' x2='1071.4' y2='312.2' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='1082.7' y1='280.3' x2='1082.7' y2='312.2' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='1086.7' y='303.9' width='214.8' height='12.5' fill='white' stroke='none'/>
+<text x='1088.7' y='310.2' font-size='10' text-anchor='start' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>1/4 gap, cabinet face to door edge</text>
+<line x1='1082.7' y1='356.4' x2='1099.2' y2='356.4' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1079.8' y1='359.2' x2='1085.5' y2='353.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1096.3' y1='359.2' x2='1102.0' y2='353.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1082.7' y1='280.3' x2='1082.7' y2='358.4' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='1099.2' y1='280.3' x2='1099.2' y2='358.4' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='1103.2' y='350.1' width='202.4' height='12.5' fill='white' stroke='none'/>
+<text x='1105.2' y='356.4' font-size='10' text-anchor='start' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>3/8 (9.5 mm) cover on the packer</text>
+<line x1='1071.4' y1='402.6' x2='1099.2' y2='402.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1068.6' y1='405.4' x2='1074.2' y2='399.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1096.3' y1='405.4' x2='1102.0' y2='399.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1071.4' y1='280.3' x2='1071.4' y2='404.6' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='1099.2' y1='280.3' x2='1099.2' y2='404.6' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='1103.2' y='396.3' width='66.0' height='12.5' fill='white' stroke='none'/>
+<text x='1105.2' y='402.6' font-size='10' text-anchor='start' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>5/8 packer</text>
+<line x1='1145.2' y1='118.8' x2='1145.2' y2='250.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1142.4' y1='121.6' x2='1148.1' y2='116.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1142.4' y1='253.6' x2='1148.1' y2='248.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='1073.4' y1='118.8' x2='1147.2' y2='118.8' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='1073.4' y1='250.8' x2='1147.2' y2='250.8' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='1114.9' y='178.5' width='84.6' height='12.5' fill='white' stroke='none' transform='rotate(-90 1157.2 184.8)'/>
+<text x='1157.2' y='184.8' font-size='10' text-anchor='middle' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 1157.2 184.8)'>packer 3 wide</text>
+<line x1='1085.4' y1='118.8' x2='1379.7' y2='167.2' stroke='#777' stroke-width='0.7'/>
+<circle cx='1085.4' cy='118.8' r='1.6' fill='#777' stroke='none'/>
+<text x='1388.2' y='144.7' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>5/8 spruce packer, 3 wide x 11 tall (line C up to</text>
+<text x='1388.2' y='156.0' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>the bay 1 end block), glued and screwed to the</text>
+<text x='1388.2' y='167.2' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall side&#x27;s outer face at the plate height; front</text>
+<text x='1388.2' y='178.5' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>face on the TV door plane, so the plate holes land</text>
+<text x='1388.2' y='189.7' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>13-29/32 from the wall (guide 4, &quot;Mounting plates&quot;).</text>
+<line x1='1057.9' y1='338.8' x2='1379.7' y2='343.2' stroke='#777' stroke-width='0.7'/>
+<circle cx='1057.9' cy='338.8' r='1.6' fill='#777' stroke='none'/>
+<text x='1388.2' y='326.3' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>the tall right side carries on 8-7/16 past the TV</text>
+<text x='1388.2' y='337.6' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>door, so no hinge on this face can land door 1:</text>
+<text x='1388.2' y='348.8' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>hence the packer. Half overlay on the packer puts</text>
+<text x='1388.2' y='360.1' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>the edge 1/64 right of 18-5/8; the cover screw eats that.</text>
+<text x='1013.2' y='41.8' font-size='9.5' text-anchor='start' fill='#111' font-weight='bold' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>B -- at the tall cabinet: door 1 on its 5/8 packer</text>
+<text x='41.8' y='402.6' font-size='9.0' text-anchor='start' fill='#555' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>9 mm nominal cover + 1/8 reveal + 0.525 mm = the 1/2 divider, so D(k-1)&#x27;s free edge sits essentially flush with the divider&#x27;s left face</text>
+<text x='41.8' y='429.0' font-size='9.0' text-anchor='start' fill='#555' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>as built at the shop&#x27;s 64ths: divider 1 left face 48-37/64, right face 49-5/64, door 2 left edge 48-47/64 -- 11/32 (8.7 mm) of cover. The cover is 9 mm nominal, 11/32 to 23/64 as built, well inside the hinge&#x27;s own cover adjustment</text>
+<text x='710.7' y='459.8' font-size='9.5' text-anchor='middle' fill='#555' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>plan, looking down -- rear (wall) at the top, front (room) at the bottom</text>
+</svg>

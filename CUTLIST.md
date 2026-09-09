@@ -98,16 +98,16 @@ All five hanging rails come from 2x4 stock already on hand. A 2x4 arrives at exa
 
 | qty | length  | width | part |
 |----:|---------|-------|------|
-| 3 | 60-21/64 | 3-1/2 | TV hanging rails, end to end across the run (top rear member of the ladder) |
+| 3 | 60-21/64, 60-11/32, 60-21/64 | 3-1/2 | TV hanging rails, end to end across the run (top rear member of the ladder); the 60-11/32 piece is the middle rail |
 | 2 | 17-1/8  | 3-1/2 | tall hanging rails |
 
 Crosscut plan from the boards on hand:
 
 | board | cut | leftover |
 |---|---|---|
-| 8' (96") #1 | one TV rail 60-21/64 | 35-43/64 |
-| 8' (96") #2 | one TV rail 60-21/64 | 35-43/64 |
-| 6-1/2' (78") #1 | one TV rail 60-21/64 | 17-43/64 |
+| 8' (96") #1 | one TV rail 60-21/64 (end rail) | 35-43/64 |
+| 8' (96") #2 | one TV rail 60-21/64 (end rail) | 35-43/64 |
+| 6-1/2' (78") #1 | the middle TV rail 60-11/32 | 17-21/32 |
 | 47" | both tall rails 17-1/8 | 12-5/8 |
 | 6-1/2' (78") #2 | untouched | 78" |
 
@@ -120,6 +120,9 @@ Measured along the rear wall from the left wall to the divider's LEFT face. Divi
 set from the doors, not at equal pitch: divider k sits so that door k+1 (hinged on it)
 covers 9 mm of its front edge and door k stops 1/8 short of door k+1. First divider is
 30-13/64 from the tall cabinet's right side, then every 30-7/64 (door 29-63/64 + reveal).
+The positions below are the model's, rounded to 1/64, so the as-built cover runs 11/32 to
+23/64 (8.7 to 9.1 mm) rather than exactly 9 mm: set the dividers to these numbers and let
+the hinge's cover screw take up the rest, do not recompute them from the formula.
 
 | divider | X from left wall | from tall cabinet side | mm from left wall |
 |---:|---|---|---:|
@@ -148,7 +151,8 @@ from the left wall: 18-5/8, 48-47/64, 78-53/64, 108-15/16, 139-3/64, 169-9/64.
 - Doors: 1/8 reveal between doors and under the slab, 1/4 at the right wall and at the
   tall cabinet. Every TV door hinges on the divider to its left and opens right. Door 1
   hinges on the tall cabinet's right side: its hinge edge sits 1/4 inside that face
-  rather than covering it. Screw a 5/8 MDF packer to that face and use a half-overlay
+  rather than covering it. Screw a 5/8 packer 11 x 3 (spruce or MDF offcut) to
+  that face and use a half-overlay
   hinge on the packer (edge lands at 18-41/64, matching the model's 18-5/8), or use an
   inset-crank hinge with no packer. Doors 2 to 6 use half-overlay hinges (9 mm cover) on
   the 1/2 dividers with plate screws no longer than 12 mm (15 mm stock screws break

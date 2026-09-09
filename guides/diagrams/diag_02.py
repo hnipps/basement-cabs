@@ -94,12 +94,13 @@ STICKS_2X2 = [
 # --- 2x4 crosscut plan (CUTLIST "Crosscut plan from the boards on hand") ---
 # Table leftovers below do not deduct the kerf; the drawing computes and labels its own.
 T4 = 3.5                         # 2x4 actual 3-1/2
-TV_RAIL = 60 + 21 / 64.0         # CUTLIST: TV hanging rails
+TV_RAIL = 60 + 21 / 64.0         # CUTLIST: TV hanging rails 1 and 3 (the outer spans)
+TV_RAIL_MID = 60 + 11 / 32.0     # CUTLIST: TV hanging rail 2, the middle span
 TALL_RAIL = 17 + 1 / 8.0         # CUTLIST: tall hanging rails
 STICKS_2X4 = [
-    ("8' #1", 96.0, [(TV_RAIL, "TV hanging rail")], 35 + 43 / 64.0),
-    ("8' #2", 96.0, [(TV_RAIL, "TV hanging rail")], 35 + 43 / 64.0),
-    ("6-1/2' #1", 78.0, [(TV_RAIL, "TV hanging rail")], 17 + 43 / 64.0),
+    ("8' #1", 96.0, [(TV_RAIL, "TV hanging rail 1")], 35 + 43 / 64.0),
+    ("8' #2", 96.0, [(TV_RAIL, "TV hanging rail 3")], 35 + 43 / 64.0),
+    ("6-1/2' #1", 78.0, [(TV_RAIL_MID, "TV hanging rail 2")], 17 + 21 / 32.0),
     ("47\"", 47.0, [(TALL_RAIL, "tall hanging rail"), (TALL_RAIL, "tall hanging rail")], 12 + 5 / 8.0),
     ("6-1/2' #2", 78.0, [], 78.0),
 ]
@@ -132,16 +133,6 @@ def _kerf_v(c, ox, oy, h):
     c.line(ox, oy, ox, oy + h, stroke=LINE, sw=0.8, dash="3 3")
 
 
-def _dim_h_boxed(c, x1, x2, y, text=None, offset_px=-12, size=10):
-    """dim_h with a white box behind the text, for dimensions over a dark fill."""
-    t = frac(abs(x2 - x1)) if text is None else text
-    w = len(t) * size * 0.62 / c.s
-    h = size * 1.5 / c.s
-    c.rect((x1 + x2) / 2 - w / 2, y + offset_px / c.s - h / 2, w, h,
-           fill="white", stroke="none", sw=0)
-    c.dim_h(x1, x2, y, text=t, offset_px=offset_px, size=size)
-
-
 def _caption(c, ox, oy, text):
     c.text(ox, oy, text, size=11, anchor="start", color="#555")
 
@@ -161,7 +152,7 @@ def nest_spruce_58(outdir):
     c.rect(ox, y, TALL_H, TALL_DEPTH, fill=MAT["spruce58"])
     c.label(ox + TALL_H / 2, y + TALL_DEPTH / 2 - 1.2,
             ["tall left side", f"{frac(TALL_H)} x {frac(TALL_DEPTH)}"], size=13)
-    c.dim_h(ox, ox + TALL_H, y + TALL_DEPTH - 1.6, offset_px=-13)
+    c.dim_h(ox, ox + TALL_H, y + TALL_DEPTH - 1.6, offset_px=-13, witness=y + TALL_DEPTH)
     _waste(c, ox + TALL_H + KERF, y, L - TALL_H - KERF, TALL_DEPTH,
            ["waste", frac(L - TALL_H - KERF)])
     c.dim_v(y, y + TALL_DEPTH, ox - 1.0)
@@ -191,7 +182,7 @@ def nest_spruce_58(outdir):
             _kerf_v(c, x - KERF / 2, y2, STRIP58)
         x += BLANK_W + KERF
     used = 5 * BLANK_W + 4 * KERF
-    c.dim_h(ox, ox + used, y2 + STRIP58 - 0.9, offset_px=-12)
+    c.dim_h(ox, ox + used, y2 + STRIP58 - 0.9, offset_px=-12, witness=y2 + STRIP58)
     _waste(c, ox + used + KERF, y2, L - used - KERF, STRIP58,
            ["waste", frac(L - used - KERF)])
     _kerf_v(c, ox + used + KERF / 2, y2, STRIP58)
@@ -231,7 +222,7 @@ def nest_spruce_12(outdir):
         c.rect(ox, y, blen, BOTTOM_W, fill=MAT["spruce12"])
         c.label(ox + blen / 2, y + BOTTOM_W / 2 - 0.9,
                 [bname, f"{frac(blen)} x {frac(BOTTOM_W)}"], size=12)
-        c.dim_h(ox, ox + blen, y + BOTTOM_W - 1.1, offset_px=-12)
+        c.dim_h(ox, ox + blen, y + BOTTOM_W - 1.1, offset_px=-12, witness=y + BOTTOM_W)
         x = ox + blen + KERF
         _kerf_v(c, x - KERF / 2, y, BOTTOM_W)
         # two dividers
@@ -242,7 +233,7 @@ def nest_spruce_12(outdir):
             if spare:
                 lines = ["divider 6", "SPARE", f"{frac(DIV_LEN)} x {frac(DIV_H)}"]
             c.label(x + DIV_H / 2, y + BOTTOM_W / 2 - 0.6, lines, size=10)
-            c.dim_h(x, x + DIV_H, y + BOTTOM_W - 1.1, offset_px=-12)
+            c.dim_h(x, x + DIV_H, y + BOTTOM_W - 1.1, offset_px=-12, witness=y + BOTTOM_W)
             div_no += 1
             x += DIV_H + KERF
             _kerf_v(c, x - KERF / 2, y, BOTTOM_W)
@@ -263,12 +254,16 @@ def nest_spruce_12(outdir):
            (ix + NOTCH_IN, inset_y), (ix + DIV_LEN, inset_y), (ix + DIV_LEN, inset_y + DIV_H)]
     c.poly(pts, fill=MAT["spruce12"], sw=1.6)
     c.rect(ix, inset_y, NOTCH_IN, NOTCH_UP, fill=MAT["waste"], stroke=DIM, sw=0.8, dash="4 3")
-    c.dim_h(ix, ix + NOTCH_IN, inset_y - 0.5, offset_px=-11)
-    c.dim_v(inset_y, inset_y + NOTCH_UP, ix + NOTCH_IN + 1.5, offset_px=12, rotate=90)
-    c.text(ix + NOTCH_IN + 3.2, inset_y + NOTCH_UP / 2, "notch for the 2x4 rail",
-           size=8.5, anchor="start")
-    c.dim_h(ix, ix + DIV_LEN, inset_y + DIV_H + 1.6, offset_px=12)
-    c.dim_v(inset_y, inset_y + DIV_H, ix - 1.0)
+    c.dim_h(ix, ix + NOTCH_IN, inset_y - 0.5, offset_px=-11, witness=inset_y)
+    # The notch depth goes on the LEFT, stacked outside the 12-1/2 overall: to the right of
+    # the notch it would sit on top of the "notch for the 2x4 rail" note.
+    c.dim_v(inset_y, inset_y + NOTCH_UP, ix - 4.0, witness=ix)
+    c.leader(ix + NOTCH_IN, inset_y + NOTCH_UP / 2, ix + NOTCH_IN + 1.6,
+             inset_y + NOTCH_UP / 2, dot=False)
+    c.text(ix + NOTCH_IN + 1.8, inset_y + NOTCH_UP / 2, "notch for the 2x4 rail",
+           size=8.5, anchor="start", box=True)
+    c.dim_h(ix, ix + DIV_LEN, inset_y + DIV_H + 1.6, offset_px=12, witness=inset_y + DIV_H)
+    c.dim_v(inset_y, inset_y + DIV_H, ix - 1.0, witness=ix)
     c.text(ix, inset_y + DIV_H + 3.4, "rear (wall)", size=10, anchor="start")
     c.text(ix + DIV_LEN, inset_y + DIV_H + 3.4, "front", size=10, anchor="end")
     c.text(ix + DIV_LEN / 2 + 1.2, inset_y + DIV_H / 2,
@@ -299,7 +294,7 @@ def nest_mdf_58(outdir):
     c.label(ox + TALL_H / 2, y + TALL_RIGHT_W / 2 - 1.4,
             ["tall right side  (EXPOSED FACE - mark it, keep it scratch-free)",
              f"{frac(TALL_H)} x {frac(TALL_RIGHT_W)}"], size=12)
-    c.dim_h(ox, ox + TALL_H, y + TALL_RIGHT_W - 1.4, offset_px=-12)
+    c.dim_h(ox, ox + TALL_H, y + TALL_RIGHT_W - 1.4, offset_px=-12, witness=y + TALL_RIGHT_W)
     c.dim_v(y, y + TALL_RIGHT_W, ox - 1.0)
     _waste(c, ox + TALL_H + KERF, y, L - TALL_H - KERF, TALL_RIGHT_W,
            ["waste", frac(L - TALL_H - KERF)])
@@ -311,7 +306,8 @@ def nest_mdf_58(outdir):
     c.label(ox + TALL_DOOR_BLANK / 2, y + TALL_DOOR_W / 2 - 1.4,
             ["tall door blank", f"{frac(TALL_DOOR_BLANK)} x {frac(TALL_DOOR_W)}",
              f"(finish {frac(TALL_H)} in guide 4)"], size=12)
-    c.dim_h(ox, ox + TALL_DOOR_BLANK, y + TALL_DOOR_W - 1.2, offset_px=-12)
+    c.dim_h(ox, ox + TALL_DOOR_BLANK, y + TALL_DOOR_W - 1.2, offset_px=-12,
+            witness=y + TALL_DOOR_W)
     c.dim_v(y, y + TALL_DOOR_W, ox - 1.0)
     _waste(c, ox + TALL_DOOR_BLANK + KERF, y, L - TALL_DOOR_BLANK - KERF, TALL_DOOR_W,
            ["waste", frac(L - TALL_DOOR_BLANK - KERF)])
@@ -350,7 +346,7 @@ def nest_mdf_58(outdir):
             door_no += 1
             x += DOOR_BLANK + KERF
             _kerf_v(c, x - KERF / 2, y, DOOR_W)
-        c.dim_h(ox, x - KERF, y + DOOR_W - 1.0, offset_px=-11,
+        c.dim_h(ox, x - KERF, y + DOOR_W - 1.0, offset_px=-11, witness=y + DOOR_W,
                 text=f"3 x {frac(DOOR_BLANK)} = {frac(3 * DOOR_BLANK)}")
         _waste(c, x, y, ox + L - x, DOOR_W, frac(ox + L - x))
 
@@ -380,8 +376,11 @@ def nest_mdf_58(outdir):
     y = oy2 + used2
     _kerf_h(c, ox, y - KERF / 2, L)
     _waste(c, ox, y, L, W - used2, f"waste {frac(W - used2)}")
+    # Label the span this line actually covers -- the two kick rips. (It used to read
+    # "remaining 19-7/8", which is those two rips plus the waste below them, and the long
+    # text ran off the left of the canvas.)
     c.dim_v(oy2 + 2 * (DOOR_W + KERF), oy2 + used2, ox - 3.4,
-            text=f"remaining {frac(W - 2 * DOOR_W - 3 * KERF)}: two {frac(KICK_W)} strips")
+            text=f"2 rips = {frac(2 * KICK_W + 2 * KERF)}")
 
     c.text(ox + L, oy1 - 1.6, f"kerf {frac(KERF)} (dashed);  doors and the tall door "
                               f"roughed {frac(OVERSIZE)} long", size=11, anchor="end", color=DIM)
@@ -417,7 +416,7 @@ def nest_mdf_12_hardboard(outdir):
     c.label(ox + SLAB_L / 2, y + SLAB_W / 2 - 1.4,
             ["TV top slab, left piece", f"{frac(SLAB_L)} x {frac(SLAB_W)}",
              "cut to length now"], size=12)
-    c.dim_h(ox, ox + SLAB_L, y + SLAB_W - 1.2, offset_px=-12)
+    c.dim_h(ox, ox + SLAB_L, y + SLAB_W - 1.2, offset_px=-12, witness=y + SLAB_W)
     c.dim_v(y, y + SLAB_W, ox - 1.0)
     _waste(c, ox + SLAB_L + KERF, y, L1 - SLAB_L - KERF, SLAB_W,
            ["waste", frac(L1 - SLAB_L - KERF)])
@@ -430,7 +429,7 @@ def nest_mdf_12_hardboard(outdir):
     c.label(ox + blank_r / 2, y + SLAB_W / 2 - 1.4,
             ["TV top slab, right piece", f"{frac(blank_r)} x {frac(SLAB_W)}",
              f"leave {frac(OVERSIZE)} long: finish {frac(SLAB_R)} in guide 7"], size=12)
-    c.dim_h(ox, ox + blank_r, y + SLAB_W - 1.2, offset_px=-12)
+    c.dim_h(ox, ox + blank_r, y + SLAB_W - 1.2, offset_px=-12, witness=y + SLAB_W)
     c.dim_v(y, y + SLAB_W, ox - 1.0)
     _waste(c, ox + blank_r + KERF, y, L1 - blank_r - KERF, SLAB_W,
            ["waste", frac(L1 - blank_r - KERF)])
@@ -449,7 +448,7 @@ def nest_mdf_12_hardboard(outdir):
     c.rect(ox, y, BACK_L, BACK_W, fill=MAT["hardboard"])
     c.label(ox + BACK_L / 2, y + BACK_W / 2 - 1.0,
             ["tall back", f"{frac(BACK_L)} x {frac(BACK_W)}"], size=13, color="white")
-    _dim_h_boxed(c, ox, ox + BACK_L, y + BACK_W - 1.4, offset_px=-12)
+    c.dim_h(ox, ox + BACK_L, y + BACK_W - 1.4, offset_px=-12, witness=y + BACK_W)
     c.dim_v(y, y + BACK_W, ox - 1.0)
     _waste(c, ox + BACK_L + KERF, y, L2 - BACK_L - KERF, BACK_W,
            ["waste", frac(L2 - BACK_L - KERF)])
@@ -511,7 +510,8 @@ def sticks(outdir):
         else:
             _waste(c, ox, y, BOARD_2X2, T2, None)
             c.text(ox + 1.0, y + T2 / 2,
-                   "board #8 (on hand): kick sleepers, cut to suit in guide 6", size=10, anchor="start")
+                   "board #8 (on hand): kick sleepers, cut to suit in guide 6", size=10,
+                   anchor="start", box=True)
         c.rect(ox, y, BOARD_2X2, T2, fill="none", stroke=LINE, sw=1.2)
         y += pitch2
 
@@ -535,7 +535,7 @@ def sticks(outdir):
         else:
             _waste(c, ox, y, blen, T4, None)
             c.text(ox + 1.0, y + T4 / 2, f"untouched, {frac(blen)} - keep for shims, bearers and cauls",
-                   size=10, anchor="start")
+                   size=10, anchor="start", box=True)
         c.rect(ox, y, blen, T4, fill="none", stroke=LINE, sw=1.2)
         y += pitch4
 
@@ -567,39 +567,41 @@ def saw_guide(outdir):
                title="Guide 02 - shop-made saw guide, cross-section")
 
     # --- top: how much base shows on the cut side, and the factory edge
-    c.dim_h(ox, fx, 0.5, offset_px=12,
+    c.dim_h(ox, fx, 0.5, offset_px=12, witness=by,
             text=f"{frac(show)} of base showing (the saw's own offset)")
-    c.text(fx - 0.6, 1.40, "factory edge outward", size=11, anchor="end", color=DIM)
+    c.text(fx - 0.6, 1.40, "factory edge outward", size=11, anchor="end", color=DIM,
+           box=True)
     c.line(fx - 0.5, 1.62, fx - 0.08, 1.95, stroke=DIM, sw=0.8)
 
     # --- workpiece
     c.rect(ox - work_over, base_y, GUIDE_BASE_W + 2 * work_over, work_t,
            fill=MAT["spruce58"])
-    c.text(ox + GUIDE_BASE_W + work_over, base_y + work_t + 0.55,
-           "workpiece (good face down)", size=11, anchor="end")
-
     # --- 1/8 hardboard base, 8" wide, lying on the workpiece
     c.rect(ox, by, GUIDE_BASE_W, HARDBOARD_T, fill=MAT["hardboard"])
     c.text(ox + GUIDE_BASE_W + 0.55, base_y - 0.75,
            f"{frac(HARDBOARD_T)} hardboard base", size=11, anchor="start")
     c.line(ox + GUIDE_BASE_W + 0.45, base_y - 0.62, ox + GUIDE_BASE_W - 0.4, by + 0.02,
            stroke=LINE, sw=0.8)
-    c.dim_h(ox, ox + GUIDE_BASE_W, base_y + work_t + 2.6, offset_px=12,
+    c.dim_h(ox, ox + GUIDE_BASE_W, base_y + work_t + 2.0, offset_px=12, witness=by,
             text=f"{frac(GUIDE_BASE_W)} base")
+    # after the base dimension, so its white box masks that dimension's witness line
+    c.text(ox + GUIDE_BASE_W + work_over, base_y + work_t + 0.55,
+           "workpiece (good face down)", size=11, anchor="end", box=True)
 
     # --- 1/2 MDF fence on top of the base, factory edge outward
     c.rect(fx, fy, MDF12_T, FENCE_W, fill=MAT["mdf12"])
     c.line(fx, fy, fx, fy + FENCE_W, stroke=DIM, sw=2.0)
-    c.dim_v(fy, fy + FENCE_W, fx - 0.35, offset_px=-11)
+    c.dim_v(fy, fy + FENCE_W, fx - 0.35, offset_px=-11, witness=fx)
     c.text(fx + MDF12_T + 1.2, 2.45,
            f"{frac(FENCE_W)} x {frac(MDF12_T)} MDF fence,", size=11, anchor="start")
     c.text(fx + MDF12_T + 1.2, 2.90,
            "glued and screwed to the base", size=11, anchor="start")
-    c.dim_h(fx + MDF12_T, ox + GUIDE_BASE_W, 3.70, offset_px=-11, text=frac(behind))
+    c.dim_h(fx + MDF12_T, ox + GUIDE_BASE_W, 3.70, offset_px=-11, text=frac(behind),
+            witness=by)
 
     # --- saw base plate riding the fence, sliding on the base
     c.rect(ox, sy, show, shoe_t, fill=MAT["wall"])
-    c.text(ox + 1.1, 4.15, "saw base plate", size=10)
+    c.text(ox + 1.1, 4.15, "saw base plate", size=10, box=True)
     c.line(ox + 1.1, 4.32, ox + 1.1, sy - 0.07, stroke=LINE, sw=0.8)
 
     # --- cut line at the trimmed base edge

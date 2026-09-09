@@ -24,8 +24,10 @@ the #10 x 4" structural screws, the 2x2 offcuts and board #8, and guide 3 open a
 2x2 blocks on end, 4-3/4 long, shimmed to line A. From board #8 and the 2x2
 leftovers (they are already sleeper length):
 
-- Tall cabinet: four, one under each corner of the bottom panel, the front pair set
-  back 5/8 from the front edge so the flush kick covers them.
+- Tall cabinet: four, one under each corner of the bottom panel, the front pair
+  flush with the panel's front edge, front face 23-13/16 from the wall (the panel
+  sits 1/8 off the wall behind the hardboard back and is 23-11/16 deep). That is
+  where the flush kick's rear face lands, so the kick screws to them.
 - TV run: fourteen, front and rear under each of the seven cross block positions
   (guide 3 steps 3 and 6). Rear ones tight to the wall; front ones with their front
   face 12-7/8 from the wall, which puts the kick face 2-1/2 behind the doors.

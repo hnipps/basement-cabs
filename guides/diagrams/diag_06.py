@@ -86,9 +86,13 @@ SLEEPER_L = 4 + 3 / 4.0
 SLEEP_REAR_D0, SLEEP_REAR_D1 = 0.0, T2X2
 SLEEP_FRONT_D1 = 12 + 7 / 8.0
 SLEEP_FRONT_D0 = SLEEP_FRONT_D1 - T2X2
-# Tall: front pair set back 5/8 from the front edge of the 23-11/16 bottom panel
-TALL_SLEEP_SETBACK = 5 / 8.0
-TALL_SLEEP_F1 = TALL_CARCASS_D - TALL_SLEEP_SETBACK
+# Tall: the bottom panel sits 1/8 off the wall, behind the hardboard back, so its
+# 23-11/16 depth runs 1/8 to 23-13/16 from the wall. The front pair of sleepers goes
+# FLUSH with that front edge: 23-13/16 = 24-7/16 door plane - 5/8 kick, so the flush
+# tall kick's rear face lands on the sleeper.
+TALL_PANEL_D0 = HARDBOARD
+TALL_PANEL_D1 = TALL_PANEL_D0 + TALL_CARCASS_D      # 23-13/16 from the wall
+TALL_SLEEP_F1 = TALL_PANEL_D1
 TALL_SLEEP_F0 = TALL_SLEEP_F1 - T2X2
 
 # Bottom stringers (guide 3 steps 4 and 6): rear tight to the wall, front face 15-3/8 out
@@ -197,7 +201,7 @@ def wall_elevation(path):
     c.text(TALL_W / 2, BOT_RAIL_C, "bottom rail", size=8)
     c.text(TALL_W / 2, TOP_RAIL_C, "top rail", size=8)
     for y in (BOT_RAIL_C, TOP_RAIL_C):
-        for k in (0.28, 0.72):
+        for k in (0.14, 0.86):      # clear of the "bottom rail" / "top rail" captions
             c.circle(TALL_W * k, y, 2.4, fill=DIM)
 
     # ---- TV run ----
@@ -257,12 +261,18 @@ def wall_elevation(path):
     # One dim per column so no two rotated labels share a strip of canvas, and every
     # rotated label is short enough not to straddle the line it belongs to.
     # The A/E/F heights and the two rail centre heights are in the annotation block.
-    c.dim_v(LINE_A, TALL_TOP, -4.0, text=frac(TALL_H) + " tall cabinet")
-    c.dim_v(LINE_A, LINE_F, WALL_W + 3.0, text=frac(TV_H) + " TV run")
-    c.dim_v(TOP_RAIL_LO, TOP_RAIL_HI, TALL_W + 3.0, text=frac(RAIL_H))
-    c.dim_h(0, TALL_W, 90.5)
-    c.dim_h(TALL_W, WALL_W, 90.5)
-    c.dim_h(0, WALL_W, 94.5)
+    # Witnesses: the cabinet height and the TV-run height run off the carcass itself; the
+    # three widths run off the tops of the two end walls (WALL_TOP) and the cabinet top.
+    WALL_TOP = 92.0
+    c.dim_v(LINE_A, TALL_TOP, -4.0, text=frac(TALL_H) + " tall cabinet", witness=0.0)
+    c.dim_v(LINE_A, LINE_F, WALL_W + 3.0, text=frac(TV_H) + " TV run", witness=WALL_W)
+    # 3-1/2 is wider than the 3-1/2 span, so push it to the RIGHT of its line, clear of
+    # the rail band and of the "top rail" caption inside it.
+    c.dim_v(TOP_RAIL_LO, TOP_RAIL_HI, TALL_W + 3.0, offset_px=12, fit="beside",
+            witness=TALL_W)
+    c.dim_h(0, TALL_W, 90.5, witness=TALL_TOP)
+    c.dim_h(TALL_W, WALL_W, 90.5, witness=(TALL_TOP, WALL_TOP))
+    c.dim_h(0, WALL_W, 94.5, witness=WALL_TOP)
 
     caption(c, -5, -9.0,
             "06-wall-elevation: rear wall, front elevation. All heights above the finished "
@@ -273,8 +283,10 @@ def wall_elevation(path):
 # 2. sleeper plan
 # --------------------------------------------------------------------------------------
 def sleeper_plan(path):
-    S, M = 6.2, 12.0
-    c = Canvas(WALL_W, 51, scale=S, margin=M, flip_y=False,
+    # The margin has to hold two depth dimensions on the left and three on the right,
+    # all outside the end walls, so it is much wider than the drawing needs.
+    S, M = 6.2, 17.0
+    c = Canvas(WALL_W, 62, scale=S, margin=M, flip_y=False,
                title="Guide 6 - plan of all 18 sleepers")
 
     # rear wall at the top, end walls
@@ -284,7 +296,8 @@ def sleeper_plan(path):
     c.text(WALL_W / 2, -1.25, "REAR WALL", size=10)
 
     # tall cabinet bottom panel
-    c.rect(0, 0, TALL_W, TALL_CARCASS_D, fill=MAT["spruce58"], sw=1.0, opacity=0.55)
+    c.rect(0, TALL_PANEL_D0, TALL_W, TALL_CARCASS_D, fill=MAT["spruce58"], sw=1.0,
+           opacity=0.55)
     c.label(TALL_W / 2, 16.5, ["tall bottom", frac(TALL_W) + " x " + frac(TALL_CARCASS_D)], size=9)
     # its four sleepers
     for x0 in (0.0, TALL_W - T2X2):
@@ -311,37 +324,51 @@ def sleeper_plan(path):
     c.text(XBLOCK_C[5] + 2, 0.75, frac(T2X2) + " sq", size=9, color=DIM, anchor="start")
 
     # ---- dimensions: X from the left wall ----
-    y1, y2, y3, y4 = 28.0, 31.0, 35.5, 38.5
+    # Rows are 4-1/2 apart (28 px at this scale) so no text can land on the line above.
+    y1, y2, y3, y4 = 28.0, 32.5, 37.0, 41.5
+    # Witness lines from the features down to the rows that use them.
+    for x_ in (0.0, TALL_W):
+        c.line(x_, TALL_PANEL_D1 + 0.4, x_, y4, stroke=DIM, sw=0.5, dash="2 3")
+    c.line(WALL_W, TV_CARCASS_D + 0.4, WALL_W, y4, stroke=DIM, sw=0.5, dash="2 3")
+    for xc in XBLOCK_C:
+        c.line(xc, TV_CARCASS_D + 0.4, xc, y2, stroke=DIM, sw=0.5, dash="2 3")
     c.dim_h(0, TALL_W, y1)
     c.dim_h(0, XBLOCK_C[0], y2)
     for a, b in zip(XBLOCK_C, XBLOCK_C[1:]):
         c.dim_h(a, b, y2)
     c.dim_h(TALL_W, WALL_W, y3)
     c.dim_h(0, WALL_W, y4)
-    for xc in XBLOCK_C:
-        c.line(xc, TV_CARCASS_D, xc, y2, stroke=DIM, sw=0.5, dash="2 3")
 
-    # depth dimensions, left of the drawing
-    c.dim_v(0, TALL_CARCASS_D, -2.0, text=frac(TALL_CARCASS_D))
-    c.dim_v(0, TALL_SLEEP_F1, -5.5, text=frac(TALL_SLEEP_F1) + " tall front sleeper")
-    # depth dimensions, right of the drawing
-    c.dim_v(0, TV_CARCASS_D, WALL_W + 3.0, text=frac(TV_CARCASS_D) + " front stringer face")
-    c.dim_v(0, SLEEP_FRONT_D1, WALL_W + 7.0, text=frac(SLEEP_FRONT_D1) + " front sleeper face")
-    c.dim_v(0, XBLOCK_L + T2X2, WALL_W + 11.0, text=frac(XBLOCK_L) + " cross block")
+    # ---- depth dimensions, outside the end walls -------------------------------------
+    # Bare numbers only: a rotated label long enough to name the feature would be several
+    # times its own span and would run into its neighbours. The key below names them.
+    c.dim_v(TALL_PANEL_D0, TALL_PANEL_D1, -7.0, witness=0.0)
+    c.dim_v(0, TALL_SLEEP_F1, -11.0, witness=0.0)
+    c.dim_v(0, TV_CARCASS_D, WALL_W + 7.5, witness=WALL_W)
+    c.dim_v(0, SLEEP_FRONT_D1, WALL_W + 11.5, witness=WALL_W)
+    c.dim_v(STR_REAR_D1, STR_REAR_D1 + XBLOCK_L, WALL_W + 15.5, witness=WALL_W)
 
-    # notes
+    # notes, including the key to the five depth dimensions
     notes = [
         ("18 sleepers: 2x2 on end, " + frac(SLEEPER_L) + " long, shimmed to line A.", LINE),
-        ("Tall: 4, one per corner; front pair set back " + frac(TALL_SLEEP_SETBACK)
-         + " from the " + frac(TALL_CARCASS_D) + " front edge.", LINE),
+        ("Tall: 4, one per corner; front pair flush with the panel's front edge, "
+         + frac(TALL_SLEEP_F1) + " from the wall.", LINE),
         ("TV: 14, rear + front at each of the seven cross block positions.", LINE),
+        ("Depths from the rear wall, LEFT of the drawing:  " + frac(TALL_CARCASS_D)
+         + " tall bottom panel (its rear edge " + frac(TALL_PANEL_D0) + " off the wall,"
+         " behind the back),  " + frac(TALL_SLEEP_F1) + " tall front sleeper face.", DIM),
+        ("Depths from the rear wall, RIGHT of the drawing:  " + frac(TV_CARCASS_D)
+         + " bottom front stringer face,  " + frac(SLEEP_FRONT_D1) + " TV front sleeper face,",
+         DIM),
+        ("and " + frac(XBLOCK_L) + " cross block, measured from the back of the bottom rear "
+         "stringer at " + frac(STR_REAR_D1) + ".", DIM),
         ("Divider centres from the tall cabinet side: "
          + ", ".join(frac(x - TALL_W) for x in DIVIDER_C) + ".", DIM),
     ]
     for i, (s_, col) in enumerate(notes):
-        c.text(TALL_W + 4, 42.0 + i * 2.2, s_, size=10, anchor="start", color=col)
+        c.text(TALL_W + 4, 45.5 + i * 2.2, s_, size=10, anchor="start", color=col)
 
-    caption(c, -5, 50.6,
+    caption(c, -5, 61.4,
             "06-sleeper-plan: plan, wall at the top, doors at the bottom. X measured from "
             "the LEFT wall.")
     return c.save(path)
@@ -376,9 +403,13 @@ def tall_fixing_section(path):
         yc, tip = TOP + SH / 2, face - SCREW_L
         c.line(tip, yc, face, yc, stroke=LINE, sw=3.0)
         c.circle(face, yc, 3.2)
-        c.dim_h(tip, face, 1.9, text="#10 x " + frac(SCREW_L))
-        c.dim_h(tip, x0 + STUD_D, 2.9, text=frac(bite) + " past the drywall")
-        c.dim_h(x0 + STUD_D, face, 3.9, text=frac(stack_t) + " stack")
+        # Witnesses: the layer ends run off the top edge of the layer rectangles, the screw
+        # tip off the top of its own dashed tip line (drawn below).
+        band, tipy = TOP - 0.9, TOP - 0.4
+        c.dim_h(tip, face, 1.9, text="#10 x " + frac(SCREW_L), witness=(tipy, band))
+        c.dim_h(tip, x0 + STUD_D, 2.9, text=frac(bite) + " past the drywall",
+                witness=(tipy, band))
+        c.dim_h(x0 + STUD_D, face, 3.9, text=frac(stack_t) + " stack", witness=band)
         if bite > STUD_D:
             c.line(tip, TOP - 0.4, tip, TOP + SH + 0.4, stroke=DIM, sw=0.8, dash="3 2")
             c.text(tip + 0.15, TOP + SH + 1.5,
@@ -415,8 +446,9 @@ def tall_fixing_section(path):
     c.rect(gx, TOP - 0.9, LEAN_SHIM, SH + 1.8, fill=MAT["spruce12"])
     c.rect(gx + LEAN_SHIM, TOP - 0.9, MDF58, SH + 1.8, fill=MAT["spruce58"])
     c.text(gx + LEAN_SHIM + MDF58 / 2, TOP + SH * 0.27, "tall left side", size=9, rotate=-90)
-    c.dim_h(gx, gx + LEAN_SHIM, 3.9, text=frac(LEAN_SHIM) + " shim")
-    c.dim_h(gx + LEAN_SHIM, gx + LEAN_SHIM + MDF58, 2.9, text=frac(MDF58) + " side")
+    c.dim_h(gx, gx + LEAN_SHIM, 3.9, text=frac(LEAN_SHIM) + " shim", witness=TOP - 0.9)
+    c.dim_h(gx + LEAN_SHIM, gx + LEAN_SHIM + MDF58, 2.9, text=frac(MDF58) + " side",
+            witness=TOP - 0.9)
     c.text(panel_left + PANEL / 2, 0.6, "leaning left wall", size=11, weight="bold")
     notes(panel_left,
           ["shim at BOTH rail heights (" + frac(BOT_RAIL_C) + " and " + frac(TOP_RAIL_C) + ")",
@@ -431,8 +463,10 @@ def tall_fixing_section(path):
 # 4. kick plan
 # --------------------------------------------------------------------------------------
 def kick_plan(path):
-    S, M = 6.2, 10.0
-    c = Canvas(WALL_W, 52, scale=S, margin=M, flip_y=False,
+    # Wide margin: two depth dimensions live left of the left wall, two right of the right
+    # wall, all outside the wall rectangles.
+    S, M = 6.2, 15.0
+    c = Canvas(WALL_W, 60, scale=S, margin=M, flip_y=False,
                title="Guide 6 - kick plan: three planes, one return")
 
     c.rect(-9, -2.5, WALL_W + 18, 2.5, fill=MAT["wall"], sw=0.8)
@@ -441,7 +475,8 @@ def kick_plan(path):
     c.text(WALL_W / 2, -1.25, "REAR WALL", size=10)
 
     # carcass outlines for context
-    c.rect(0, 0, TALL_W, TALL_CARCASS_D, fill="none", stroke=GREY, sw=0.7, dash="3 3")
+    c.rect(0, TALL_PANEL_D0, TALL_W, TALL_CARCASS_D, fill="none", stroke=GREY, sw=0.7,
+           dash="3 3")
     c.rect(TALL_W, 0, TV_W, TV_CARCASS_D, fill="none", stroke=GREY, sw=0.7, dash="3 3")
 
     # door planes, dashed
@@ -457,8 +492,9 @@ def kick_plan(path):
 
     # tall kick, flush with the door face
     c.rect(0, KICK_TALL_FACE - KICK_T, KICK_TALL_L, KICK_T, fill=MAT["mdf58"])
-    c.label(TALL_W / 2, 5.8, ["kick, tall " + frac(KICK_TALL_L),
-                              "flush with the door face"], size=9)
+    c.label(1.0, 5.4, ["kick, tall " + frac(KICK_TALL_L),
+                       "flush with the",
+                       "door face"], size=9, anchor="start")
     c.label(TALL_W / 2, 12.0, ["door plane", frac(DOOR_PLANE_TALL)], size=9, color=GREY)
     arrow(c, TALL_W / 2, 14.2, TALL_W / 2, KICK_TALL_FACE - 0.3, color=GREY)
 
@@ -477,46 +513,52 @@ def kick_plan(path):
            "joint behind cross block 3's sleeper (" + frac(DIVIDER_C[2]) + " from the left wall)",
            size=10, anchor="start", color=DIM)
 
-    # the return and its 2x2 block
+    # the return and its 2x2 block. The note sits in the empty band in front of the TV
+    # kick with a short horizontal leader, instead of a long diagonal across the run.
     c.rect(TALL_W, KICK_TV_FACE, KICK_T, KICK_RETURN_L, fill=MAT["mdf58"])
     c.rect(TALL_W + KICK_T, KICK_TV_FACE + 3.0, T2X2, T2X2, fill=MAT["2x2"], sw=0.8)
-    arrow(c, TALL_W + 30, 5.0, TALL_W + KICK_T + 0.3, KICK_TV_FACE + KICK_RETURN_L / 2)
-    c.label(TALL_W + 31, 3.6,
+    ret_y = KICK_TV_FACE + KICK_RETURN_L / 2
+    arrow(c, TALL_W + 9.5, ret_y, TALL_W + KICK_T + 0.4, ret_y)
+    c.label(TALL_W + 10.5, ret_y,
             ["kick return " + frac(KICK_RETURN_L) + " joins the two planes at the tall",
              "cabinet's right side, on a 2x2 block behind it",
              "(" + frac(DOOR_PLANE_TALL) + " - " + frac(KICK_TV_FACE) + " = "
              + frac(KICK_RETURN_L) + ")"], size=10, anchor="start")
 
-    # dimensions
-    c.dim_h(0, KICK_TALL_L, 29.0)
-    c.dim_h(TALL_W, KICK_TV_JOINT_X, 29.0)
-    c.dim_h(KICK_TV_JOINT_X, WALL_W, 29.0)
-    c.dim_h(TALL_W, WALL_W, 33.5, text=frac(KICK_TV_L))
-    c.dim_h(0, WALL_W, 37.0)
-    c.dim_v(0, KICK_TALL_FACE, -2.0, text=frac(KICK_TALL_FACE) + " tall kick face")
-    c.dim_v(0, TALL_SLEEP_F1, -5.5, text=frac(TALL_SLEEP_F1) + " tall front sleeper")
-    c.dim_v(0, KICK_TV_FACE, WALL_W + 2.0, text=frac(KICK_TV_FACE) + " TV kick face")
-    c.dim_v(0, DOOR_PLANE_TV, WALL_W + 5.5, text=frac(DOOR_PLANE_TV) + " TV door plane")
-    # the recess is only 2-1/2, so its label goes beside the dim line, not along it
-    c.dim_v(KICK_TV_FACE, DOOR_PLANE_TV, WALL_W - 14.0, text="")
-    c.text(WALL_W - 15.0, DOOR_PLANE_TV + 1.6, frac(KICK_TV_RECESS) + " recess",
-           size=10, color=DIM, anchor="end")
+    # ---- dimensions ------------------------------------------------------------------
+    # Rows 5 apart (31 px) so no text lands on the line above; each row witnessed back to
+    # the kick face it measures.
+    c.dim_h(0, KICK_TALL_L, 29.0, witness=KICK_TALL_FACE)
+    c.dim_h(TALL_W, KICK_TV_JOINT_X, 29.0, witness=KICK_TV_FACE)
+    c.dim_h(KICK_TV_JOINT_X, WALL_W, 29.0, witness=KICK_TV_FACE)
+    c.dim_h(TALL_W, WALL_W, 34.0, text=frac(KICK_TV_L), witness=KICK_TV_FACE)
+    c.dim_h(0, WALL_W, 39.0, witness=(KICK_TALL_FACE, KICK_TV_FACE))
+    # Depths: bare numbers, named in the key below, so no rotated label overruns its span.
+    c.dim_v(0, KICK_TALL_FACE, -7.0, witness=0.0)
+    c.dim_v(0, TALL_SLEEP_F1, -11.0, witness=0.0)
+    c.dim_v(0, KICK_TV_FACE, WALL_W + 7.5, witness=WALL_W)
+    c.dim_v(0, DOOR_PLANE_TV, WALL_W + 11.5, witness=WALL_W)
+    # The recess is only 2-1/2 deep, so it is dimensioned in open drawing space with the
+    # label written horizontally to the right of its own line.
+    c.dim_v(KICK_TV_FACE, DOOR_PLANE_TV, TALL_W + 128.0,
+            text=frac(KICK_TV_RECESS) + " recess", offset_px=6, fit="beside")
 
     notes = [
         ("All kicks " + frac(KICK_T) + " MDF, " + frac(KICK_H)
          + " tall, #8 x 1-1/4 into the sleepers,", LINE),
         ("two per sleeper, heads filled. Kicks come off for cleaning.", LINE),
-        ("NOTE: the tall front sleeper face lands at " + frac(TALL_SLEEP_F1)
-         + " but the tall kick's", DIM),
-        ("rear face is at " + frac(KICK_TALL_FACE - KICK_T) + " -- "
-         + frac(KICK_TALL_FACE - KICK_T - TALL_SLEEP_F1) + " short. Move the sleeper forward to "
-         + frac(KICK_TALL_FACE - KICK_T), DIM),
-        ("(i.e. " + frac(TALL_SLEEP_SETBACK) + " back from the DOOR face) or pack it out.", DIM),
+        ("Depths from the rear wall, LEFT of the drawing:  " + frac(KICK_TALL_FACE)
+         + " tall kick face (= the tall door plane); the tall front sleepers are flush",
+         DIM),
+        ("with the bottom panel's front edge at " + frac(TALL_SLEEP_F1)
+         + ", so the flush kick's rear face lands on them.", DIM),
+        ("Depths from the rear wall, RIGHT of the drawing:  " + frac(KICK_TV_FACE)
+         + " TV kick face,  " + frac(DOOR_PLANE_TV) + " TV door plane.", DIM),
     ]
     for i, (s_, col) in enumerate(notes):
-        c.text(TALL_W + 4, 41.0 + i * 2.0, s_, size=10, anchor="start", color=col)
+        c.text(TALL_W + 4, 43.5 + i * 2.0, s_, size=10, anchor="start", color=col)
 
-    caption(c, -5, 51.6,
+    caption(c, -5, 59.4,
             "06-kick-plan: plan, wall at the top. Door planes dashed; the TV kick sits "
             + frac(KICK_TV_RECESS) + " behind its door plane.")
     return c.save(path)
@@ -566,7 +608,8 @@ def order_strip(path):
         col, row = i % 5, i // 5
         x = col * (cw + cgap)
         y = cy + row * (ch + 2.0)
-        box(c, x, y, cw, ch, s, fill="white", size=10, dash="3 2")
+        # 9.5 keeps the longest sub-step ("8 five dividers...") inside its box
+        box(c, x, y, cw, ch, s, fill="white", size=9.5, dash="3 2")
         if row == 0:
             c.line(x + cw / 2, by + bh + 4.0, x + cw / 2, y, stroke=LINE, sw=0.6, dash="2 2")
 

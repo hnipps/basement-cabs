@@ -1,61 +1,87 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 530 800' width='530' height='800'><title>Tall cabinet, side section (rear at left, front at right)</title><defs><pattern id='waste' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'><line x1='0' y1='0' x2='0' y2='8' stroke='#999' stroke-width='1'/></pattern></defs><rect width='100%' height='100%' fill='white'/>
-<rect x='44.6' y='92.0' width='177.7' height='620.2' fill='#e9d3a8' stroke='#111' stroke-width='1.0' opacity='1.0'/>
-<rect x='43.7' y='92.0' width='0.9' height='620.2' fill='#8b6a4a' stroke='#111' stroke-width='1.2' opacity='1.0'/>
-<rect x='44.6' y='707.4' width='177.7' height='4.7' fill='#e9d3a8' stroke='#111' stroke-width='1.6' opacity='1.0'/>
-<rect x='44.6' y='92.0' width='177.7' height='4.7' fill='#e9d3a8' stroke='#111' stroke-width='1.6' opacity='1.0'/>
-<rect x='44.6' y='681.2' width='11.2' height='26.2' fill='#e0a850' stroke='#111' stroke-width='1.4' opacity='1.0'/>
-<rect x='44.6' y='96.7' width='11.2' height='26.2' fill='#e0a850' stroke='#111' stroke-width='1.4' opacity='1.0'/>
-<rect x='223.2' y='92.0' width='4.7' height='620.2' fill='#c9b6a0' stroke='#111' stroke-width='1.4' opacity='1.0'/>
-<line x1='55.6' y1='662.4' x2='55.6' y2='141.7' stroke='#666' stroke-width='0.9' stroke-dasharray='5,4'/>
-<circle cx='55.6' cy='662.4' r='1.6' fill='#666' stroke='none'/>
-<circle cx='55.6' cy='141.7' r='1.6' fill='#666' stroke='none'/>
-<line x1='211.3' y1='662.4' x2='211.3' y2='141.7' stroke='#666' stroke-width='0.9' stroke-dasharray='5,4'/>
-<circle cx='211.3' cy='662.4' r='1.6' fill='#666' stroke='none'/>
-<circle cx='211.3' cy='141.7' r='1.6' fill='#666' stroke='none'/>
-<line x1='133.5' y1='94.3' x2='239.0' y2='18.4' stroke='#777' stroke-width='0.7'/>
-<text x='242.0' y='12.7' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall top 23-11/16 x 17-1/8 (5/8 spruce),</text>
-<text x='242.0' y='24.0' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>on its end, flush front and rear</text>
-<line x1='50.2' y1='109.8' x2='239.0' y2='104.6' stroke='#777' stroke-width='0.7'/>
-<text x='242.0' y='99.0' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall hanging rail 17-1/8 x 3-1/2 (2x4),</text>
-<text x='242.0' y='110.2' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tight under the top, flush rear</text>
-<line x1='225.6' y1='232.1' x2='239.0' y2='232.1' stroke='#777' stroke-width='0.7'/>
-<text x='242.0' y='232.1' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall door, 5/8 MDF</text>
-<line x1='211.3' y1='352.1' x2='239.0' y2='352.1' stroke='#777' stroke-width='0.7'/>
-<text x='242.0' y='346.5' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>shelf pin rows, 1-15/32 from the front</text>
-<text x='242.0' y='357.8' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>and rear edges (guide 4)</text>
-<line x1='44.2' y1='472.1' x2='239.0' y2='472.1' stroke='#777' stroke-width='0.7'/>
-<text x='242.0' y='466.5' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall back, 1/8 hardboard,</text>
-<text x='242.0' y='477.8' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>over the rear edges</text>
-<line x1='50.2' y1='694.3' x2='239.0' y2='614.6' stroke='#777' stroke-width='0.7'/>
-<text x='242.0' y='609.0' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall hanging rail on the bottom</text>
-<text x='242.0' y='620.2' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>at the rear, planed face to the rear</text>
-<line x1='133.5' y1='709.8' x2='239.0' y2='689.6' stroke='#777' stroke-width='0.7'/>
-<text x='242.0' y='684.0' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall bottom, on its end,</text>
-<text x='242.0' y='695.2' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>flush with the front and rear edges</text>
-<text x='133.5' y='402.0' font-size='9.0' text-anchor='middle' fill='#5b4a2e' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 133.5 402.0)'>tall left side, inner face (5/8 spruce)</text>
-<line x1='37.9' y1='712.1' x2='37.9' y2='92.0' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='33.9' y1='712.1' x2='41.9' y2='712.1' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='33.9' y1='92.0' x2='41.9' y2='92.0' stroke='#c0392b' stroke-width='0.9'/>
-<text x='24.9' y='402.0' font-size='10' text-anchor='middle' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 24.9 402.0)'>82-11/16</text>
-<line x1='44.6' y1='724.1' x2='222.3' y2='724.1' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='44.6' y1='720.1' x2='44.6' y2='728.1' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='222.3' y1='720.1' x2='222.3' y2='728.1' stroke='#c0392b' stroke-width='0.9'/>
-<text x='133.5' y='737.1' font-size='10' text-anchor='middle' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>23-11/16</text>
-<line x1='43.7' y1='745.1' x2='222.3' y2='745.1' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='43.7' y1='741.1' x2='43.7' y2='749.1' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='222.3' y1='741.1' x2='222.3' y2='749.1' stroke='#c0392b' stroke-width='0.9'/>
-<text x='133.0' y='758.1' font-size='10' text-anchor='middle' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>23-13/16 with the back</text>
-<line x1='43.7' y1='766.1' x2='227.0' y2='766.1' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='43.7' y1='762.1' x2='43.7' y2='770.1' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='227.0' y1='762.1' x2='227.0' y2='770.1' stroke='#c0392b' stroke-width='0.9'/>
-<text x='135.3' y='779.1' font-size='10' text-anchor='middle' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>24-7/16 with the door</text>
-<line x1='23.6' y1='707.4' x2='23.6' y2='681.2' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='19.6' y1='707.4' x2='27.6' y2='707.4' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='19.6' y1='681.2' x2='27.6' y2='681.2' stroke='#c0392b' stroke-width='0.9'/>
-<text x='11.6' y='694.3' font-size='10' text-anchor='middle' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 11.6 694.3)'>3-1/2</text>
-<line x1='44.6' y1='670.7' x2='55.9' y2='670.7' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='44.6' y1='666.7' x2='44.6' y2='674.7' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='55.9' y1='666.7' x2='55.9' y2='674.7' stroke='#c0392b' stroke-width='0.9'/>
-<text x='50.2' y='658.7' font-size='10' text-anchor='middle' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>1-1/2</text>
-<text x='11.6' y='791.6' font-size='9.5' text-anchor='start' fill='#555' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>side section - the cut plane runs between the two sides</text>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 553 808' width='553' height='808'><title>Tall cabinet, side section (rear at left, front at right)</title><defs><pattern id='waste' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'><line x1='0' y1='0' x2='0' y2='8' stroke='#999' stroke-width='1'/></pattern></defs><rect width='100%' height='100%' fill='white'/>
+<rect x='64.1' y='95.0' width='177.7' height='620.2' fill='#e9d3a8' stroke='#111' stroke-width='1.0' opacity='1.0'/>
+<rect x='63.2' y='95.0' width='0.9' height='620.2' fill='#8b6a4a' stroke='#111' stroke-width='1.2' opacity='1.0'/>
+<rect x='64.1' y='710.4' width='177.7' height='4.7' fill='#e9d3a8' stroke='#111' stroke-width='1.6' opacity='1.0'/>
+<rect x='64.1' y='95.0' width='177.7' height='4.7' fill='#e9d3a8' stroke='#111' stroke-width='1.6' opacity='1.0'/>
+<rect x='64.1' y='684.2' width='11.2' height='26.2' fill='#e0a850' stroke='#111' stroke-width='1.4' opacity='1.0'/>
+<rect x='64.1' y='99.7' width='11.2' height='26.2' fill='#e0a850' stroke='#111' stroke-width='1.4' opacity='1.0'/>
+<rect x='241.8' y='95.0' width='4.7' height='620.2' fill='#c9b6a0' stroke='#111' stroke-width='1.4' opacity='1.0'/>
+<line x1='75.1' y1='665.4' x2='75.1' y2='144.7' stroke='#666' stroke-width='0.9' stroke-dasharray='5,4'/>
+<circle cx='75.1' cy='665.4' r='1.6' fill='#666' stroke='none'/>
+<circle cx='75.1' cy='144.7' r='1.6' fill='#666' stroke='none'/>
+<line x1='230.8' y1='665.4' x2='230.8' y2='144.7' stroke='#666' stroke-width='0.9' stroke-dasharray='5,4'/>
+<circle cx='230.8' cy='665.4' r='1.6' fill='#666' stroke='none'/>
+<circle cx='230.8' cy='144.7' r='1.6' fill='#666' stroke='none'/>
+<line x1='153.0' y1='97.3' x2='256.9' y2='21.4' stroke='#777' stroke-width='0.7'/>
+<circle cx='153.0' cy='97.3' r='1.6' fill='#777' stroke='none'/>
+<text x='259.9' y='15.8' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall top 23-11/16 x 17-1/8 (5/8 spruce),</text>
+<text x='259.9' y='27.0' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>on its end, flush front and rear</text>
+<line x1='69.7' y1='112.8' x2='256.9' y2='107.6' stroke='#777' stroke-width='0.7'/>
+<circle cx='69.7' cy='112.8' r='1.6' fill='#777' stroke='none'/>
+<text x='259.9' y='102.0' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall hanging rail 17-1/8 x 3-1/2 (2x4),</text>
+<text x='259.9' y='113.2' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tight under the top, flush rear</text>
+<line x1='244.1' y1='235.1' x2='256.9' y2='235.1' stroke='#777' stroke-width='0.7'/>
+<circle cx='244.1' cy='235.1' r='1.6' fill='#777' stroke='none'/>
+<text x='259.9' y='229.5' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall door, 5/8 MDF, rear face on</text>
+<text x='259.9' y='240.8' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>the carcass front edge</text>
+<line x1='230.8' y1='355.1' x2='256.9' y2='355.1' stroke='#777' stroke-width='0.7'/>
+<circle cx='230.8' cy='355.1' r='1.6' fill='#777' stroke='none'/>
+<text x='259.9' y='349.5' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>shelf pin rows, 1-15/32 from the front</text>
+<text x='259.9' y='360.8' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>and rear edges (guide 4)</text>
+<line x1='63.7' y1='475.1' x2='256.9' y2='475.1' stroke='#777' stroke-width='0.7'/>
+<circle cx='63.7' cy='475.1' r='1.6' fill='#777' stroke='none'/>
+<text x='259.9' y='469.5' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall back, 1/8 hardboard,</text>
+<text x='259.9' y='480.8' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>over the rear edges</text>
+<line x1='69.7' y1='697.3' x2='256.9' y2='617.6' stroke='#777' stroke-width='0.7'/>
+<circle cx='69.7' cy='697.3' r='1.6' fill='#777' stroke='none'/>
+<text x='259.9' y='612.0' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall hanging rail on the bottom</text>
+<text x='259.9' y='623.2' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>at the rear, planed face to the rear</text>
+<line x1='153.0' y1='712.8' x2='256.9' y2='692.6' stroke='#777' stroke-width='0.7'/>
+<circle cx='153.0' cy='712.8' r='1.6' fill='#777' stroke='none'/>
+<text x='259.9' y='687.0' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall bottom, on its end,</text>
+<text x='259.9' y='698.2' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>flush with the front and rear edges</text>
+<text x='153.0' y='405.0' font-size='9.0' text-anchor='middle' fill='#5b4a2e' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 153.0 405.0)'>tall left side, inner face (5/8 spruce)</text>
+<line x1='57.4' y1='715.1' x2='57.4' y2='95.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='54.5' y1='718.0' x2='60.2' y2='712.3' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='54.5' y1='97.8' x2='60.2' y2='92.1' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='62.1' y1='715.1' x2='55.4' y2='715.1' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='62.1' y1='95.0' x2='55.4' y2='95.0' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='17.6' y='398.8' width='53.6' height='12.5' fill='white' stroke='none' transform='rotate(-90 44.4 405.0)'/>
+<text x='44.4' y='405.0' font-size='10' text-anchor='middle' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 44.4 405.0)'>82-11/16</text>
+<line x1='64.1' y1='727.1' x2='241.8' y2='727.1' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='61.3' y1='730.0' x2='67.0' y2='724.3' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='239.0' y1='730.0' x2='244.6' y2='724.3' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='64.1' y1='717.1' x2='64.1' y2='729.1' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='241.8' y1='717.1' x2='241.8' y2='729.1' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='126.2' y='733.9' width='53.6' height='12.5' fill='white' stroke='none'/>
+<text x='153.0' y='740.1' font-size='10' text-anchor='middle' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>23-11/16</text>
+<line x1='63.2' y1='748.1' x2='241.8' y2='748.1' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='60.4' y1='751.0' x2='66.0' y2='745.3' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='239.0' y1='751.0' x2='244.6' y2='745.3' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='63.2' y1='717.1' x2='63.2' y2='750.1' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='241.8' y1='717.1' x2='241.8' y2='750.1' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='82.3' y='754.9' width='140.4' height='12.5' fill='white' stroke='none'/>
+<text x='152.5' y='761.1' font-size='10' text-anchor='middle' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>23-13/16 with the back</text>
+<line x1='63.2' y1='769.1' x2='246.5' y2='769.1' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='60.4' y1='772.0' x2='66.0' y2='766.3' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='243.6' y1='772.0' x2='249.3' y2='766.3' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='63.2' y1='717.1' x2='63.2' y2='771.1' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='246.5' y1='717.1' x2='246.5' y2='771.1' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='87.7' y='775.9' width='134.2' height='12.5' fill='white' stroke='none'/>
+<text x='154.8' y='782.1' font-size='10' text-anchor='middle' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>24-7/16 with the door</text>
+<line x1='43.1' y1='710.4' x2='43.1' y2='684.2' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='40.3' y1='713.3' x2='46.0' y2='707.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='40.3' y1='687.0' x2='46.0' y2='681.4' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='62.1' y1='710.4' x2='41.1' y2='710.4' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='62.1' y1='684.2' x2='41.1' y2='684.2' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='13.6' y='691.1' width='35.0' height='12.5' fill='white' stroke='none' transform='rotate(-90 31.1 697.3)'/>
+<text x='31.1' y='697.3' font-size='10' text-anchor='middle' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 31.1 697.3)'>3-1/2</text>
+<line x1='64.1' y1='673.6' x2='75.4' y2='673.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='61.3' y1='676.5' x2='67.0' y2='670.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='72.5' y1='676.5' x2='78.2' y2='670.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='64.1' y1='682.2' x2='64.1' y2='671.6' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='75.4' y1='682.2' x2='75.4' y2='671.6' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='79.4' y='667.4' width='35.0' height='12.5' fill='white' stroke='none'/>
+<text x='81.4' y='673.6' font-size='10' text-anchor='start' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>1-1/2</text>
+<text x='11.6' y='799.1' font-size='9.5' text-anchor='start' fill='#555' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>side section - the cut plane runs between the two sides</text>
 </svg>

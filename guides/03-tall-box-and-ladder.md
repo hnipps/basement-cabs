@@ -67,12 +67,15 @@ elsewhere the sleepers get shims.
 | E | 19-7/16 | top of the rails, dividers and top-front stringers; slab underside |
 | F | 19-15/16 | slab top = panelling bottom edge |
 
-![TV ladder cross-section through one bay, with lines A to F set out from the finished floor](diagrams/03-ladder-section.svg)
+![TV ladder cross-section through one bay: lines A to F set out from the finished floor, the drywall and stud behind the wall line, and the #10 x 4 screw through the rail into the stud](diagrams/03-ladder-section.svg)
+
+![Exploded oblique of one bay segment, in build order from the bottom up: bottom stringers and cross block, 1/2 spruce bottom, notched divider with its top-front 2x2 stringer, the 2x4 rail dropped through the notch, then the 1/2 MDF slab](diagrams/03-ladder-exploded.svg)
 
 1. **Lines.** Level line E on the rear wall from the tall cabinet to the right wall
    (laser, or a 4' level walked along a straight board). Mark line A and line B off it
    with a tape, not the floor.
-2. **Rails to studs.** Three 2x4 rails 60-21/64 end to end, top edge on line E, butt
+2. **Rails to studs.** Three 2x4 rails, 60-21/64 + 60-11/32 + 60-21/64 end to end
+   (the middle one is the 1/64 longer piece), top edge on line E, butt
    joints at 60-21/64 and 120-43/64 from the tall cabinet (78-45/64 and 139-3/64 from
    the left wall); both joints hide inside dividers 2 and 4. Pilot and drive one #10
    x 4" into every stud, alternating high and low on the rail. Stack to the stud is
@@ -81,7 +84,7 @@ elsewhere the sleepers get shims.
    1/16; a bowed wall pushes the whole run out, and nothing else squares it. Sight
    down the rail line before the last screws.
 
-   ![TV ladder front elevation of the whole 181 run: rail and stringer joints, five dividers, seven cross blocks, six top front stringers](diagrams/03-ladder-elevation.svg)
+   ![Whole-wall front elevation with the doors off: the tall cabinet's interior (two rails, three shelves on pins, five hinge plates on the wall side) and the 181 TV ladder - three rails end to end, bottom stringers and bottoms with their joints, seven cross blocks, five dividers with hinge plates at 1-1/2 and 8-7/8, six top-front stringers, and the slab in two pieces jointed over divider 3](diagrams/03-ladder-elevation.svg)
 3. **Rear sleepers.** 2x2 blocks stood on end under line A, one under each cross
    block position (left end, the five divider centres at 30-29/64, 60-9/16, 90-43/64,
    120-49/64, 150-7/8 from the tall cabinet, and the right end), tight to the wall.
@@ -117,7 +120,9 @@ elsewhere the sleepers get shims.
    line E, front face flush with the divider fronts. 1" pocket screws from the
    divider face into the stringer ends. Bay 1's left end: screw a 2x2 offcut block to
    the tall cabinet's right side with #8 x 1-1/4 (pilot; 1/2 bite in 5/8 MDF) and
-   screw the stringer to the block. Bay 6's right end: block to the right wall the
+   screw the stringer to the block. That block sits directly above door 1's packer
+   (guide 4), both on the tall cabinet's right face at the door plane, so screw the
+   block on first and glue the packer under it, or the reverse. Bay 6's right end: block to the right wall the
    same way, into a stud if there is one, drywall anchors if not; the slab bears on
    it, the rail carries the load.
 10. **Check** every bay: divider plumb, top edges on line E, front faces in one

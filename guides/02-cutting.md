@@ -136,9 +136,9 @@ Five crosscuts on the miter saw, no rips.
 
 | board | cut | leftover |
 |---|---|---|
-| 8' #1 | TV rail 60-21/64 | 35-43/64 |
-| 8' #2 | TV rail 60-21/64 | 35-43/64 |
-| 6-1/2' #1 | TV rail 60-21/64 | 17-43/64 |
+| 8' #1 | TV rail 60-21/64 (end rail) | 35-43/64 |
+| 8' #2 | TV rail 60-21/64 (end rail) | 35-43/64 |
+| 6-1/2' #1 | TV rail 60-11/32 (middle rail) | 17-21/32 |
 | 47" | both tall rails 17-1/8 | 12-5/8 |
 | 6-1/2' #2 | untouched | 78" |
 

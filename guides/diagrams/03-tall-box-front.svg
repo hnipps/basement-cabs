@@ -30,35 +30,51 @@
 <circle cx='177.1' cy='41.8' r='2.4' fill='white' stroke='#111'/>
 <line x1='177.1' y1='41.8' x2='181.5' y2='41.8' stroke='#111' stroke-width='0.8'/>
 <text x='16.4' y='329.0' font-size='9.0' text-anchor='middle' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 16.4 329.0)'>tall left side (5/8 spruce)</text>
-<line x1='19.3' y1='329.0' x2='57.2' y2='329.0' stroke='#777' stroke-width='0.7'/>
+<line x1='57.2' y1='329.0' x2='19.3' y2='329.0' stroke='#777' stroke-width='0.7'/>
+<circle cx='57.2' cy='329.0' r='1.6' fill='#777' stroke='none'/>
 <text x='199.6' y='184.5' font-size='9.0' text-anchor='middle' fill='#777' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 199.6 184.5)'>tall right side (5/8 MDF) removed to draw</text>
-<line x1='196.9' y1='184.5' x2='181.5' y2='184.5' stroke='#777' stroke-width='0.7'/>
+<line x1='181.5' y1='184.5' x2='196.9' y2='184.5' stroke='#777' stroke-width='0.7'/>
+<circle cx='181.5' cy='184.5' r='1.6' fill='#777' stroke='none'/>
 <line x1='52.9' y1='629.6' x2='181.5' y2='629.6' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='52.9' y1='625.6' x2='52.9' y2='633.6' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='181.5' y1='625.6' x2='181.5' y2='633.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='50.0' y1='632.5' x2='55.7' y2='626.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='178.6' y1='632.5' x2='184.3' y2='626.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='52.9' y1='620.4' x2='52.9' y2='631.6' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='181.5' y1='620.4' x2='181.5' y2='631.6' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='96.6' y='636.4' width='41.2' height='12.5' fill='white' stroke='none'/>
 <text x='117.2' y='642.6' font-size='10' text-anchor='middle' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>18-3/8</text>
 <line x1='57.2' y1='647.9' x2='177.1' y2='647.9' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='57.2' y1='643.9' x2='57.2' y2='651.9' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='177.1' y1='643.9' x2='177.1' y2='651.9' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='54.4' y1='650.7' x2='60.1' y2='645.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='174.3' y1='650.7' x2='179.9' y2='645.0' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='57.2' y1='620.4' x2='57.2' y2='649.9' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='177.1' y1='620.4' x2='177.1' y2='649.9' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='96.6' y='654.6' width='41.2' height='12.5' fill='white' stroke='none'/>
 <text x='117.2' y='660.9' font-size='10' text-anchor='middle' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>17-1/8</text>
 <line x1='46.5' y1='618.4' x2='46.5' y2='39.6' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='42.5' y1='618.4' x2='50.5' y2='618.4' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='42.5' y1='39.6' x2='50.5' y2='39.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='43.7' y1='621.3' x2='49.4' y2='615.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='43.7' y1='42.5' x2='49.4' y2='36.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='50.9' y1='618.4' x2='44.5' y2='618.4' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='50.9' y1='39.6' x2='44.5' y2='39.6' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='6.7' y='322.8' width='53.6' height='12.5' fill='white' stroke='none' transform='rotate(-90 33.5 329.0)'/>
 <text x='33.5' y='329.0' font-size='10' text-anchor='middle' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 33.5 329.0)'>82-11/16</text>
 <line x1='117.2' y1='68.5' x2='117.2' y2='61.5' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='113.2' y1='68.5' x2='121.2' y2='68.5' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='113.2' y1='61.5' x2='121.2' y2='61.5' stroke='#c0392b' stroke-width='0.9'/>
-<text x='106.2' y='65.0' font-size='10' text-anchor='middle' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 106.2 65.0)'>1</text>
+<line x1='114.3' y1='71.3' x2='120.0' y2='65.7' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='114.3' y1='64.3' x2='120.0' y2='58.7' stroke='#c0392b' stroke-width='0.9'/>
+<rect x='96.0' y='58.8' width='10.2' height='12.5' fill='white' stroke='none'/>
+<text x='104.2' y='65.0' font-size='10' text-anchor='end' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>1</text>
 <line x1='57.2' y1='41.8' x2='220.0' y2='51.4' stroke='#777' stroke-width='0.7'/>
+<circle cx='57.2' cy='41.8' r='1.6' fill='#777' stroke='none'/>
 <text x='223.5' y='45.8' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall top: 3 pockets in each end,</text>
 <text x='223.5' y='57.1' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>spread in the depth - see the plan</text>
 <line x1='57.2' y1='51.0' x2='220.0' y2='100.5' stroke='#777' stroke-width='0.7'/>
+<circle cx='57.2' cy='51.0' r='1.6' fill='#777' stroke='none'/>
 <text x='223.5' y='89.2' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall hanging rail: 2 pockets per end,</text>
 <text x='223.5' y='100.5' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>1 from each long edge, jig at 1-1/2,</text>
 <text x='223.5' y='111.7' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>2-1/2 coarse screws</text>
 <line x1='57.2' y1='607.1' x2='220.0' y2='555.4' stroke='#777' stroke-width='0.7'/>
+<circle cx='57.2' cy='607.1' r='1.6' fill='#777' stroke='none'/>
 <text x='223.5' y='555.4' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>bottom rail: the same 2 pockets per end</text>
 <line x1='57.2' y1='616.3' x2='220.0' y2='583.4' stroke='#777' stroke-width='0.7'/>
+<circle cx='57.2' cy='616.3' r='1.6' fill='#777' stroke='none'/>
 <text x='223.5' y='583.4' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>tall bottom: 3 pockets in each end</text>
 <text x='223.5' y='129.7' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>Pockets go in the ends of the top, bottom</text>
 <text x='223.5' y='141.0' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>and rails, screwing into the sides.</text>
@@ -86,22 +102,35 @@
 <text x='283.4' y='498.8' font-size='9.0' text-anchor='middle' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>front edge</text>
 <text x='283.4' y='387.4' font-size='9.0' text-anchor='middle' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>3 pockets per end</text>
 <line x1='223.5' y1='523.3' x2='343.4' y2='523.3' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='223.5' y1='519.3' x2='223.5' y2='527.3' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='343.4' y1='519.3' x2='343.4' y2='527.3' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='220.6' y1='526.1' x2='226.3' y2='520.5' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='340.5' y1='526.1' x2='346.2' y2='520.5' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='223.5' y1='508.4' x2='223.5' y2='525.3' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='343.4' y1='508.4' x2='343.4' y2='525.3' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='262.8' y='530.0' width='41.2' height='12.5' fill='white' stroke='none'/>
 <text x='283.4' y='536.3' font-size='10' text-anchor='middle' fill='#c0392b' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>17-1/8</text>
 <line x1='213.6' y1='506.4' x2='213.6' y2='340.6' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='209.6' y1='506.4' x2='217.6' y2='506.4' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='209.6' y1='340.6' x2='217.6' y2='340.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='210.8' y1='509.3' x2='216.5' y2='503.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='210.8' y1='343.5' x2='216.5' y2='337.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='221.5' y1='506.4' x2='211.6' y2='506.4' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='221.5' y1='340.6' x2='211.6' y2='340.6' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='174.8' y='417.3' width='53.6' height='12.5' fill='white' stroke='none' transform='rotate(-90 201.6 423.5)'/>
 <text x='201.6' y='423.5' font-size='10' text-anchor='middle' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(-90 201.6 423.5)'>23-11/16</text>
 <line x1='352.4' y1='351.1' x2='352.4' y2='340.6' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='348.4' y1='351.1' x2='356.4' y2='351.1' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='348.4' y1='340.6' x2='356.4' y2='340.6' stroke='#c0392b' stroke-width='0.9'/>
-<text x='363.4' y='345.9' font-size='10' text-anchor='middle' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(90 363.4 345.9)'>1-1/2</text>
+<line x1='349.6' y1='354.0' x2='355.3' y2='348.3' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='349.6' y1='343.5' x2='355.3' y2='337.8' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='345.4' y1='351.1' x2='354.4' y2='351.1' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='345.4' y1='340.6' x2='354.4' y2='340.6' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='363.4' y='339.6' width='35.0' height='12.5' fill='white' stroke='none'/>
+<text x='365.4' y='345.9' font-size='10' text-anchor='start' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>1-1/2</text>
 <line x1='352.4' y1='506.4' x2='352.4' y2='485.4' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='348.4' y1='506.4' x2='356.4' y2='506.4' stroke='#c0392b' stroke-width='0.9'/>
-<line x1='348.4' y1='485.4' x2='356.4' y2='485.4' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='349.6' y1='509.3' x2='355.3' y2='503.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='349.6' y1='488.3' x2='355.3' y2='482.6' stroke='#c0392b' stroke-width='0.9'/>
+<line x1='345.4' y1='506.4' x2='354.4' y2='506.4' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<line x1='345.4' y1='485.4' x2='354.4' y2='485.4' stroke='#c0392b' stroke-width='0.6' opacity='0.8'/>
+<rect x='358.3' y='489.7' width='10.2' height='12.5' fill='white' stroke='none' transform='rotate(90 363.4 495.9)'/>
 <text x='363.4' y='495.9' font-size='10' text-anchor='middle' fill='#c0392b' dominant-baseline='middle' font-family='Menlo, Consolas, monospace' transform='rotate(90 363.4 495.9)'>3</text>
 <line x1='237.5' y1='492.4' x2='368.6' y2='457.4' stroke='#777' stroke-width='0.7'/>
+<circle cx='237.5' cy='492.4' r='1.6' fill='#777' stroke='none'/>
 <text x='371.4' y='446.2' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>keep pockets 2 clear of the</text>
 <text x='371.4' y='457.4' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>front-left corner: the hinge</text>
 <text x='371.4' y='468.7' font-size='9.0' text-anchor='start' fill='#111' font-weight='normal' dominant-baseline='middle' font-family='Menlo, Consolas, monospace'>plates land there (guide 4)</text>
