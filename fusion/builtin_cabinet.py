@@ -13,12 +13,16 @@
 #     bottom-rear stringers full length, 2x2 cross blocks under every divider and at both
 #     ends, the three 2x4 rails end to end as the top-rear member, and six short 2x2
 #     top-front stringers between dividers. Three 1/2 spruce bottoms on the stringers,
-#     six 1/2 spruce dividers notched rear-top for the rail, 1/2 MDF top slab in two pieces
+#     five 1/2 spruce dividers notched rear-top for the rail, 1/2 MDF top slab in two pieces
 #     with the joint over a divider, six 5/8 MDF doors. Every TV door hinges on the divider
-#     to its left (door 1 on the tall cabinet side) and opens to the right: door 1 full
-#     overlay, doors 2-6 half overlay covering 9 mm of the divider. Divider positions are
+#     to its left (door 1 on a packer on the tall cabinet side) and opens to the right: all
+#     half overlay, doors 2-6 covering 9 mm of the divider. Divider positions are
 #     therefore derived from the doors, not an equal pitch.
-#   Kicks: 5/8 MDF on 2x2 sleeper blocks (sleepers not modelled). No adjustable legs.
+#   Kicks: 5/8 MDF on 18 2x2 sleeper blocks (4-3/4 long, shimmed up to the 4-15/16 kick line);
+#     the TV kick is two pieces jointed over divider 3. No adjustable legs.
+#   Door 1 packer: 5/8 x 3 x 11 block on the tall cabinet's right face at the TV door plane.
+#
+# Re-running on a populated design clears the timeline and rebuilds (idempotent).
 
 import adsk.core
 import adsk.fusion
@@ -33,11 +37,12 @@ def run(context):
     )
     root = design.rootComponent
     out = []
-    if root.bRepBodies.count:
-        raise RuntimeError(
-            "document already has %d bodies; start from an empty design"
-            % root.bRepBodies.count
-        )
+    if design.timeline.count:
+        design.timeline.markerPosition = 0
+        design.timeline.deleteAllAfterMarker()
+        out.append("cleared existing timeline")
+    for s_ in list(design.selectionSets):
+        s_.deleteMe()
 
     # name, expression, unit, comment
     PARAMS = [
@@ -136,7 +141,14 @@ def run(context):
             "in",
             "tall door width (end_gap at the wall, flush at the exposed side)",
         ),
-        ("rail_len", "tv_w / 3", "in", "TV rail length, three rails end to end"),
+        ("rail_end", "60.328125", "in", "TV end rails, 60-21/64 (CUTLIST); middle rail takes the remainder"),
+        ("rail_mid", "tv_w - 2 * rail_end", "in", "TV middle rail length (60-11/32)"),
+        ("shelf_clear", "0.0625", "in", "shelf width under the opening so it drops onto the pins"),
+        ("sleeper_l", "4.75", "in", "2x2 sleeper length; shimmed up to gap (4-15/16)"),
+        ("packer_w", "3", "in", "door 1 hinge packer width (depth from the door plane)"),
+        ("packer_h", "11", "in", "door 1 hinge packer height, standing on line C"),
+        ("tall_sleeper_front", "tall_depth - door_t", "in", "tall front sleeper face from the wall (23-13/16), flush kick rear face"),
+        ("tv_sleeper_front", "tv_depth - kick_setback - door_t", "in", "TV front sleeper face from the wall (12-7/8)"),
     ]
     # divider k (1..5) left face: door k+1 hinges on it and covers overlay_half of its edge,
     # so the divider's right face = door(k+1) left edge + overlay_half.
@@ -159,6 +171,15 @@ def run(context):
             p.expression = expr
         else:
             p = ups.add(name, adsk.core.ValueInput.createByString(expr), unit, comment)
+
+    keep = {n for n, _, _, _ in PARAMS}
+    stale = [p.name for p in ups if p.name not in keep]
+    for nm in stale:
+        p = ups.itemByName(nm)
+        if p and p.deleteMe():
+            out.append("deleted stale parameter %s" % nm)
+        else:
+            out.append("could not delete stale parameter %s" % nm)
 
     # numeric shadow for zero checks and verification
     V = {}
@@ -398,12 +419,12 @@ def run(context):
             "Shelf%d" % i,
             "z",
             {
-                "x": "box_t",
+                "x": "box_t + shelf_clear/2",
                 "y": "back_t",
                 "z": "gap + %d*tall_h/(tall_shelves+1) - box_t/2" % i,
             },
             {
-                "x": "tall_w - 2*box_t",
+                "x": "tall_w - 2*box_t - shelf_clear",
                 "y": "tall_depth - back_t - door_t - box_t",
                 "z": "box_t",
             },
@@ -442,14 +463,14 @@ def run(context):
     )
     # cross blocks between the stringers: both ends and centred under each divider
     blocks = (
-        ["tall_w"]
-        + ["%s + tv_panel_t/2 - stringer/2" % d for d in div_lo]
-        + ["wall_w - stringer"]
+        [("LeftEnd", "tall_w")]
+        + [("%d" % (k + 1), "%s + tv_panel_t/2 - stringer/2" % d) for k, d in enumerate(div_lo)]
+        + [("RightEnd", "wall_w - stringer")]
     )
-    for i, bx in enumerate(blocks):
+    for bname, bx in blocks:
         panel(
             tv,
-            "CrossBlock%d" % (i + 1),
+            "CrossBlock%s" % bname,
             "x",
             {"x": bx, "y": "stringer", "z": "gap"},
             {"x": "stringer", "y": "tv_cd - 2*stringer", "z": "stringer"},
@@ -470,18 +491,16 @@ def run(context):
         )
     # top-rear member: three 2x4 rails end to end, screwed to the studs
     rails = []
+    rail_x = ["tall_w", "tall_w + rail_end", "tall_w + rail_end + rail_mid"]
+    rail_l = ["rail_end", "rail_mid", "rail_end"]
     for j in range(3):
         rails.append(
             panel(
                 tv,
                 "Rail%d" % (j + 1),
                 "y",
-                {
-                    "x": "tall_w + %d*rail_len" % j,
-                    "y": "0",
-                    "z": "gap + tv_h - slab_t - rail_h",
-                },
-                {"x": "rail_len", "y": "rail_t", "z": "rail_h"},
+                {"x": rail_x[j], "y": "0", "z": "gap + tv_h - slab_t - rail_h"},
+                {"x": rail_l[j], "y": "rail_t", "z": "rail_h"},
             )
         )
     # dividers on the bottom panel, notched rear-top for the rail (rail body is the cutting tool)
@@ -530,6 +549,15 @@ def run(context):
             },
             {"x": "tv_door_w", "y": "door_t", "z": "tv_door_h"},
         )
+    # door 1 hinge packer: 5/8 block on the tall cabinet's right face, front face at the TV
+    # door plane, standing on line C (top of the bottoms), stopping 1-1/2 under line E
+    panel(
+        tv,
+        "Door1Packer",
+        "x",
+        {"x": "tall_w", "y": "tv_cd - packer_w", "z": "gap + stringer + tv_panel_t"},
+        {"x": "box_t", "y": "packer_w", "z": "packer_h"},
+    )
     # top slab in two pieces, joint over the middle of divider 3
     slab_joint = "div3_x + tv_panel_t/2"
     panel(
@@ -575,17 +603,57 @@ def run(context):
             "z": "gap",
         },
     )
+    # TV kick in two pieces, joint behind cross block 3 (under divider 3, same X as the slab joint)
     panel(
         kk,
-        "TV",
+        "TV1",
         "y",
         {"x": "tall_w", "y": "tv_depth - kick_setback - door_t", "z": "0"},
-        {"x": "tv_w", "y": "door_t", "z": "gap"},
+        {"x": "(%s) - tall_w" % slab_joint, "y": "door_t", "z": "gap"},
+    )
+    panel(
+        kk,
+        "TV2",
+        "y",
+        {"x": slab_joint, "y": "tv_depth - kick_setback - door_t", "z": "0"},
+        {"x": "wall_w - (%s)" % slab_joint, "y": "door_t", "z": "gap"},
     )
 
+    # ---------------- Sleepers: 18 2x2 blocks on end, 4-3/4 long, shimmed to the kick line ----------------
+    sl = new_comp("Sleeper")
+    tall_sx = [("L", "box_t"), ("R", "tall_w - box_t - stringer")]
+    for tag, sx in tall_sx:
+        panel(
+            sl,
+            "Tall%sRear" % tag,
+            "z",
+            {"x": sx, "y": "0", "z": "0"},
+            {"x": "stringer", "y": "stringer", "z": "sleeper_l"},
+        )
+        panel(
+            sl,
+            "Tall%sFront" % tag,
+            "z",
+            {"x": sx, "y": "tall_sleeper_front - stringer", "z": "0"},
+            {"x": "stringer", "y": "stringer", "z": "sleeper_l"},
+        )
+    for bname, bx in blocks:
+        panel(
+            sl,
+            "TV%sRear" % bname,
+            "z",
+            {"x": bx, "y": "0", "z": "0"},
+            {"x": "stringer", "y": "stringer", "z": "sleeper_l"},
+        )
+        panel(
+            sl,
+            "TV%sFront" % bname,
+            "z",
+            {"x": bx, "y": "tv_sleeper_front - stringer", "z": "0"},
+            {"x": "stringer", "y": "stringer", "z": "sleeper_l"},
+        )
+
     # selection sets (click one in the browser, press V to hide/show)
-    for s_ in list(design.selectionSets):
-        s_.deleteMe()
 
     def _rule(prefix=None, has=None):
         return lambda nm: (
@@ -595,16 +663,17 @@ def run(context):
     for nm, rule in [
         ("Tall cabinet", _rule(prefix="TallCabinet_")),
         ("TV run", _rule(prefix="TVRun_")),
-        ("Doors", _rule(has="Door")),
+        ("Doors", lambda nm: "Door" in nm and "Packer" not in nm),
         ("TV top slab", _rule(prefix="TVRun_TopSlab")),
         ("Ladder (2x2)", lambda nm: "Stringer" in nm or "CrossBlock" in nm),
         ("Kick", _rule(prefix="Kick_")),
+        ("Sleepers", _rule(prefix="Sleeper_")),
         ("Rails (2x4)", _rule(has="Rail")),
     ]:
         design.selectionSets.add([b for b in root.bRepBodies if rule(b.name)], nm)
 
     out.append(
-        "gap = %.4f, tv_w = %.4f, tv_door %.4f x %.4f, div_h %.4f, tall_door_w %.4f, rail_len %.4f"
+        "gap = %.4f, tv_w = %.4f, tv_door %.4f x %.4f, div_h %.4f, tall_door_w %.4f, rail_mid %.4f"
         % (
             V["gap"],
             V["tv_w"],
@@ -612,7 +681,7 @@ def run(context):
             V["tv_door_h"],
             V["div_h"],
             V["tall_door_w"],
-            V["rail_len"],
+            V["rail_mid"],
         )
     )
     out.append(

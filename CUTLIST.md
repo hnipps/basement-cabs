@@ -1,7 +1,8 @@
-# Cut list — built-in cabinet, Option 2-lite (generated from the Fusion model, 2026-09-08)
+# Cut list — built-in cabinet, Option 2-lite (generated from the Fusion model, 2026-09-09)
 
 Dimensions in inches, length x width. Thickness per material. Rip and cross-cut to
-these sizes; the model is the source of truth (`fusion/builtin_cabinet.py`, 48 bodies).
+these sizes; the model is the source of truth (`fusion/builtin_cabinet.py`, 68 bodies,
+including the 18 sleepers and door 1's hinge packer, which are not sheet-goods parts).
 
 Parameters at time of export: wall 199-3/8, tall cabinet 18-3/8 W x 82-11/16 H x
 24-7/16 D, TV run 181 W x 15 H x 16 D, 4-15/16 kick under both. Construction per

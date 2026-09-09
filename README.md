@@ -13,11 +13,12 @@ on 2x2 sleepers behind 5/8 MDF kicks.
 
 - `CUTLIST.md` — every part with size and nesting, generated from the model. The
   source of truth for the guides.
-- `fusion/builtin_cabinet.py` — builds the whole model (48 bodies) from an empty
-  Fusion Part design. All dimensions are Fusion user parameters (Modify > Change
-  Parameters). Edit a parameter to move geometry; divider positions derive from the
-  door width and hinge overlay. Changing the shelf or door count needs a rerun on an
-  empty design.
+- `fusion/builtin_cabinet.py` — builds the whole model (68 bodies: carcass, ladder,
+  doors, slab, kicks, door 1 hinge packer and all 18 sleepers) in a Fusion Part
+  design. All dimensions are Fusion user parameters (Modify > Change Parameters).
+  Edit a parameter to move geometry; divider positions derive from the door width
+  and hinge overlay. Changing the shelf or door count needs a rerun: the script
+  clears the timeline and rebuilds, so re-running it is safe.
 - `fusion/cabinet_views/cabinet_views.py` — creates Selection Sets (one per view) and
   can isolate a view. Run it from Scripts and Add-Ins (Shift+S) and pick a number.
 - `guides/00-overview.md` … `08-cost-reduction-options.md` — build guides, below.
@@ -27,7 +28,7 @@ on 2x2 sleepers behind 5/8 MDF kicks.
 
 ## Viewing parts of the model
 
-Seven Selection Sets live in the Fusion browser. Click one, press V to hide it, V
+Eight Selection Sets live in the Fusion browser. Click one, press V to hide it, V
 again to show it. Or run the `cabinet_views` script (Shift+S, Scripts tab,
 double-click) and type a number to show only that group. The script also rebuilds the
 sets after a model rebuild.
@@ -40,7 +41,8 @@ sets after a model rebuild.
 | TV run | work on the tall cabinet alone | build the ladder |
 | Ladder (2x2) | see bottoms and dividers without the stringers | cut and place the stringers and cross blocks |
 | Rails (2x4) | see the divider notches empty | mark the stud screws |
-| Kick | see the sleeper zone | cut the kick plates |
+| Kick | see the sleepers | cut the kick plates |
+| Sleepers | see the floor line | set out the 18 sleepers (guide 6) |
 
 The script folder is symlinked into
 `~/Library/Application Support/Autodesk/Autodesk Fusion 360/API/Scripts/` so Fusion finds

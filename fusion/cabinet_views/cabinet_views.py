@@ -23,10 +23,11 @@ VIEWS = [
     ("All",          _rule()),
     ("Tall cabinet", _rule(prefix="TallCabinet_")),
     ("TV run",       _rule(prefix="TVRun_")),
-    ("Doors",        _rule(has="Door")),
+    ("Doors",        lambda n: "Door" in n and "Packer" not in n),
     ("TV top slab",  _rule(prefix="TVRun_TopSlab")),
     ("Ladder (2x2)", lambda n: "Stringer" in n or "CrossBlock" in n),
     ("Kick",         _rule(prefix="Kick_")),
+    ("Sleepers",     _rule(prefix="Sleeper_")),
     ("Rails (2x4)",  _rule(has="Rail")),
 ]
 
